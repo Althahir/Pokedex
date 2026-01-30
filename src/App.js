@@ -1,11 +1,4 @@
-// PAS REUSSI A FAIRE :
 
-// Intermédiaires
-// ● système de favoris ⭐
-// ● compteur de favoris
-// ● tri par nom ou id
-
-// j'arrive pas a comprendre la logique qui me permet de mettre le bouton favoris dans l'enfant et le compteur dans le parent
 import './App.css';
 import pkmnList from "./pokedex.json"
 import PokemonList from './PokemonList';
@@ -45,11 +38,16 @@ function App() {
 
     }
   }
-
+const PokemonCardEmpty = () => (
+  <div className="cardPkmn empty">
+    <div className="silhouette">?</div>
+    <p>Emplacement vide</p>
+  </div>
+);
   
   const pkmnNew=pkmnList.map(el=>{
   return (
-  <div>
+  
   <PokemonList 
     key={el.id} 
       id={el.id} 
@@ -59,29 +57,36 @@ function App() {
       isFav={listFav.includes(el.id)}
       onFavClick={favPokemon} />
       
-    </div>
+    
     )
 })
-  const afficherFav=()=>{
-    const listAffichee = listFav.map(el=>{
-      const pk= pkmnList.find(p => p.id===el)
-      if (pk){
-        return(
-          <PokemonList 
+const afficherFav = () => {
+  const MAX_TEAM = 6;
+  const teamVisuals = [];
+
+  for (let i = 0; i < MAX_TEAM; i++) {
+    if (listFav[i]) {
+      // S'il y a un favori à cet index, on cherche ses infos
+      const pk = pkmnList.find(p => p.id === listFav[i]);
+      teamVisuals.push(
+        <PokemonList 
           key={pk.id} 
           id={pk.id} 
           nom={pk.nom} 
           type={pk.type} 
           image={pk.image}
-          isFav={true} // Ils sont forcément favoris ici
+          isFav={true} 
           onFavClick={favPokemon} 
         />
-        )
-      }
-      return null;
-    })
-    return listAffichee
+      );
+    } else {
+      // Sinon, on pousse une silhouette vide
+      teamVisuals.push(<PokemonCardEmpty key={`empty-${i}`} />);
+    }
   }
+
+  return teamVisuals;
+};
 return (
     <div className="App">
       <img className="logo" src={logo}></img>
@@ -92,15 +97,10 @@ return (
       </div>
       <h2>Mon équipe ({listFav.length})</h2>
       <div className='equipe'>
-        {listFav.length > 0 
-          ? (
+        
             <div className="equipe-container">
               {afficherFav()}
             </div>
-            )
-          : (
-            <p>Aucun Pokémon dans votre équipe pour le moment.</p>
-            )}
       </div>
       <div className='body'>
 

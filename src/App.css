@@ -83,9 +83,12 @@ border: 1px solid #636363;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.367);
 }
 .equipe-container{
-  background-color: red;
+  /* background-color: rgba(255, 0, 0, 0.547); */
+  background: linear-gradient(180deg,#f00000 48%,#222224 49%, #222224 50%, #f0f0f0 51%);
+  border: 10px solid #222224;
   display: flex;
   flex-direction: row;
+  border-radius: 150px;
 }
 .body {
   display: grid;
@@ -98,7 +101,9 @@ border: 1px solid #636363;
   width: 100%;
   box-sizing: border-box;
   margin: 0;
-  
+  /* AJOUTE CES DEUX LIGNES */
+  justify-items: center; /* Centre horizontalement dans la cellule */
+  align-items: center;   /* Centre verticalement dans la cellule */
 }
 
 .cardPkmn{
@@ -132,7 +137,7 @@ border: 1px solid #636363;
 .nomPkmn{
   /* background-color: blue; */
   text-align: center;
-  font-size: 2.5em;
+  font-size: 2.2em;
   font-weight: bold;
   width: 100%;
   margin: 0;
@@ -228,4 +233,31 @@ border: none;
 }
 .Dragon{
   background-color: cadetblue;
+}
+
+
+
+
+.cardPkmn.empty {
+  border: 2px dashed #ccc;
+  background-color: #f9f9f9;
+  opacity: 0.6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 430px; /* À ajuster selon la taille de tes vraies cartes */
+}
+
+.silhouette {
+  font-size: 50px;
+  color: #ddd;
+  font-weight: bold;
+}
+
+.pokeball-icon {
+  color: red; /* Le haut devient rouge */
+  background: white; /* Le bas reste blanc */
+  border-radius: 50%;
+  border: 1px solid black;
 }
