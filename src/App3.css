@@ -226,7 +226,7 @@ background: linear-gradient(180deg, #f00000 48%, #222224 49%, #222224 50%, #f0f0
   
   font-size: 1.2em;
   letter-spacing: 5px;
-  color: grey;
+  color: white;
     font-family: 'Poppins', sans-serif; /* Style moderne sans-serif */
     width: 100%;
     font-weight:200;
@@ -252,7 +252,7 @@ background: linear-gradient(180deg, #f00000 48%, #222224 49%, #222224 50%, #f0f0
   text-transform: uppercase;
   letter-spacing: 2px;
   margin: 10px 0;
-  color: grey;
+  color: white;
   text-align: left;
   width: 100%;
   margin: 0;
@@ -264,7 +264,8 @@ background: linear-gradient(180deg, #f00000 48%, #222224 49%, #222224 50%, #f0f0
   text-transform: uppercase;
   letter-spacing: 2px;
   margin: 10px 0;
-  color: grey;
+  color: white;
+  z-index: 10;
 }
 
 
