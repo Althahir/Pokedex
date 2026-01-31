@@ -2,7 +2,7 @@ import React from "react"
 import { useState } from "react"
 
 
-const PokemonList =({id,nom,type,image, isFav, onFavClick})=>{
+const PokemonList =({id,nom,type,image, isFav, onFavClick, nbfav})=>{
  
  
  
@@ -13,12 +13,26 @@ const PokemonList =({id,nom,type,image, isFav, onFavClick})=>{
             <p className="nomPkmn">{nom}</p>
             <img src={image} className="imagePkmn" alt="" />
             <p className={`type ${type}`}>{type}</p>
-            {/* <button className="buttonPkmn" onClick={}>Ajouter au favoris</button> */}
             <button className="btnPkmn" onClick={() => onFavClick(id)}>
                 {isFav 
-                    ? <p className="isFav">Dans les favs ! <br></br><span>⭐</span></p>
-                    : <p className="isNotFav">Ajouter aux favs ? <br></br><span>☆</span></p>}
+                    ? (
+                    <div className="isFav"><p>Dans l'équipe !</p><div className="pokeball"></div></div>
+                        ) 
+                    : nbfav.length >= 6 
+                        ? (
+                        <p className="equipeMax">Équipe au max</p>
+                            ) 
+                        : (
+                         <p className="ajoutEquipe">Mettre dans l'équipe ?</p>
+                         )}
             </button>
+            {/* <button className="btnPkmn" onClick={() => onFavClick(id)}>
+                {isFav 
+                    ? <div className="isFav"><p>Dans l'équipe !</p><div className="pokeball"></div></div>
+                    : <div className="isNotFav">{nbfav[5]==null
+                                                    ?<p className="ajoutEquipe">Mettre dans l'équipe ?</p>
+                                                    :<p className="equipeMax">Equipe au max</p>}</div>}
+            </button> */}
           
         </div>
        

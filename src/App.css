@@ -22,11 +22,54 @@
   transform: scale(1.2);
   /* box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.367); */
 }
-.logoRec{
+.messageShow{
+  position: fixed;
+  top: 0;
+  left: -20px;
+  height: 200px;
+  height: 150px;
+  width: 110vw;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: white; */
+  font-family: 'PokemonVideoGame',sans-serif;
+  color: #ffcb05; /* Le jaune officiel */
+-webkit-text-stroke: 3px #3b4cca;
+font-size: 3.5em;
+letter-spacing: 4px;
+border: 10px solid #636363;
+  background: linear-gradient(180deg,#f00000 48%,#222224 49%, #222224 50%, #f0f0f0 51%);
+  border: 10px solid #222224;
+  text-align: center;
 
-  width: 100%;
-  height: 100%;
 }
+.messageShow::after {
+  content: "";
+  position: absolute;
+  transform: translateX(-50%);
+  width: 24px;  
+  height: 24px;
+  background: white;
+  border: 5px solid #222224; 
+  border-radius: 50%;
+  z-index: -1; 
+}
+
+.messageHide{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 200px;
+  height: 150px;
+  width: 100%;
+  font-size: 2em;
+  z-index: -2;
+}
+/* .messageShow{
+  z-index: 2;
+} */
 .search{
   background-color: #6363630f;
   border: #636363 1px solid;
@@ -49,7 +92,7 @@ font-family: 'PokemonVideoGame', sans-serif;
 color: #ffcb05; /* Le jaune officiel */
 -webkit-text-stroke: 2px #3b4cca;
 letter-spacing: 4px;
-padding: 10px;
+padding: 10px 30px;
 border: 1px solid #636363;
 }
 .searchPkmn::placeholder{
@@ -57,8 +100,8 @@ border: 1px solid #636363;
   -webkit-text-stroke: 2px #3b4cca75;
   text-align: center;
 }
-.searchButton{
-  /* width: 20%;*/
+.deleteSearch{
+  width: 20%;
   height: 60px; 
   border: 1px solid #636363;
   border-radius: 20px;
@@ -68,7 +111,7 @@ border: 1px solid #636363;
   text-align: center;
   overflow: hidden;
   font-family: 'PokemonVideoGame', sans-serif;
-  font-size: 2.3rem;
+  font-size: 2rem;
   color: #ffcb05; /* Le jaune officiel */
   background-color: white;
   padding: 30px;
@@ -78,9 +121,16 @@ border: 1px solid #636363;
   transition: all ease-in-out 0.2s;
 
 }
-.searchButton:hover{
+.deleteSearch:hover{
   transform: scale(1.02);
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.367);
+}
+.equipe{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
 }
 .equipe-container{
   /* background-color: rgba(255, 0, 0, 0.547); */
@@ -89,7 +139,28 @@ border: 1px solid #636363;
   display: flex;
   flex-direction: row;
   border-radius: 150px;
+  margin: 20px;
 }
+  .reinitEquipe{
+    /* margin-top: 20px; */
+    padding: 0px 80px;
+    border-radius: 50px;
+    /* color: red */
+    font-family: 'PokemonVideoGame', sans-serif;
+    color: #ffcb05; /* Le jaune officiel */
+-webkit-text-stroke: 2px #3b4cca;
+letter-spacing: 4px;
+/* padding: 10px; */
+border:3px solid  #222224;
+font-size: 2em;
+    transition: all ease-in-out 0.2s;
+
+  }
+  
+  .reinitEquipe:hover{
+  transform: scale(1.02);
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.367);
+  }
 .body {
   display: grid;
   /* Crée 4 colonnes de taille égale */
@@ -177,16 +248,45 @@ border: none;
     font-weight: bold;
     border-radius: 20px;
     width: 100%;
-      span{
+      /* span{
         font-size: 1.5em;
-      }
+      } */
+  }
 
   }
-.isFav{
-  background-color: rgba(255, 255, 0, 0.42);
+.pokeball {
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(180deg, #f00000 48%, #222224 49%, #222224 50%, #f0f0f0 51%);
+  border-radius: 50%;
+  border: 1px solid #222224;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; 
+  margin-left: 5px;
 }
 
+.pokeball::after {
+  content: "";
+  width: 4px;  
+  height: 4px;
+  background: white;
+  border: 2.5px solid #222224; 
+  border-radius: 50%;
+  z-index: 2; 
 }
+.isFav{
+  /* background-color: rgba(255, 255, 0, 0.42); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.equipeMax{
+  color: red;
+}
+
+
 .Plante{
   background-color: green;
 }
@@ -255,9 +355,3 @@ border: none;
   font-weight: bold;
 }
 
-.pokeball-icon {
-  color: red; /* Le haut devient rouge */
-  background: white; /* Le bas reste blanc */
-  border-radius: 50%;
-  border: 1px solid black;
-}

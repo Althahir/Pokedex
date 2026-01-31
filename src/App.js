@@ -10,32 +10,37 @@ import logoRec from './logoRecherche.png'
 function App() {
   const [recherche,setRecherche]=useState("")
   const [listFav,setListFav]=useState([])
+  const [message,setMessage]=useState("")
 
-    // listFav.length>0 ? console.log(listFav) : console.log("")
-    useEffect(() => {
-    if (listFav.length > 0) {
-      // console.log("--- Mes Favoris ---");
-      listFav.forEach(id => {
-      // On cherche l'objet pokemon complet dans la liste d'origine
-      const pokemonTrouve = pkmnList.find(p => p.id === id);
+//     useEffect(() => {
+//     if (listFav.length > 0) {
+//       console.log("--- Mes Favoris ---");
+//       listFav.forEach(id => {
+//       On cherche l'objet pokemon complet dans la liste d'origine
+//       const pokemonTrouve = pkmnList.find(p => p.id === id);
       
-      if (pokemonTrouve) {
-        // console.log(`ID ${id} : ${pokemonTrouve.nom}`);
-        localStorage.setItem=("PkmnFav",JSON.stringify)
-      }
-    });
-  }
-}, [listFav]);
+//       if (pokemonTrouve) {
+//         console.log(`ID ${id} : ${pokemonTrouve.nom}`);
+//         localStorage.setItem=("PkmnFav",JSON.stringify)
+//       }
+//     });
+//   }
+// }, [listFav]);
 
   const favPokemon=(id)=>{
     if (listFav.includes(id)){
-      const nvFab = listFav.filter(favId=> favId !== id)
-      
+      const nvFab = listFav.filter(favId=> favId !== id)   
       setListFav(nvFab)
     }else{
-      setListFav([...listFav,id]);
-      
-
+      if (listFav.length<6){
+        setListFav([...listFav,id]);
+      }
+      else{
+        setMessage("Equipe pleine !")
+        setTimeout(() => {
+          setMessage("")
+        }, 3000);
+      }
     }
   }
 const PokemonCardEmpty = () => (
@@ -44,10 +49,20 @@ const PokemonCardEmpty = () => (
     <p>Emplacement vide</p>
   </div>
 );
-  
-  const pkmnNew=pkmnList.map(el=>{
-  return (
-  
+
+const reinitEquipe=()=>{
+  setListFav([])
+}
+const deleteSearch=()=>{
+  setRecherche("")
+}
+
+const pkmnNew=pkmnList
+  .filter(el=>{
+    return el.nom.toLowerCase().includes(recherche.toLowerCase())
+  })
+  .map(el=>{
+    return(
   <PokemonList 
     key={el.id} 
       id={el.id} 
@@ -55,20 +70,21 @@ const PokemonCardEmpty = () => (
       type={el.type} 
       image={el.image}
       isFav={listFav.includes(el.id)}
-      onFavClick={favPokemon} />
-      
-    
-    )
-})
-const afficherFav = () => {
-  const MAX_TEAM = 6;
-  const teamVisuals = [];
+      onFavClick={favPokemon} 
+      nbfav={listFav}/>
 
-  for (let i = 0; i < MAX_TEAM; i++) {
+
+    )
+  })
+ 
+const afficherFav = () => {
+  const equipeVide = [];
+
+  for (let i = 0; i < 6; i++) {
     if (listFav[i]) {
       // S'il y a un favori à cet index, on cherche ses infos
       const pk = pkmnList.find(p => p.id === listFav[i]);
-      teamVisuals.push(
+      equipeVide.push(
         <PokemonList 
           key={pk.id} 
           id={pk.id} 
@@ -80,27 +96,29 @@ const afficherFav = () => {
         />
       );
     } else {
-      // Sinon, on pousse une silhouette vide
-      teamVisuals.push(<PokemonCardEmpty key={`empty-${i}`} />);
+      equipeVide.push(<PokemonCardEmpty key={`empty-${i}`} />);
     }
   }
 
-  return teamVisuals;
+  return equipeVide;
 };
 return (
     <div className="App">
       <img className="logo" src={logo}></img>
+      <p className={message.includes("Equipe") ? "messageShow" : "messageHide"} >{message}</p>
+      {/* <p className='message'>{message}</p> */}
       <div className='search'>
-        <input className='searchPkmn' placeholder='Entrer un nom'></input>
-        <button id="searchButton" className='searchButton'>Recherche</button>
-        <p id='message'></p>
+        <input className='searchPkmn' placeholder='Entrer un nom' value={recherche} onChange={(event)=>setRecherche(event.target.value)}></input>
+        <button id="deleteSearch" className='deleteSearch' onClick={deleteSearch}>Effacer</button>
       </div>
-      <h2>Mon équipe ({listFav.length})</h2>
+      {/* <h2>Mon équipe ({listFav.length})</h2> */}
       <div className='equipe'>
         
             <div className="equipe-container">
               {afficherFav()}
+             
             </div>
+             <button className='reinitEquipe' onClick={reinitEquipe}>Reinitialiser l'équipe</button>
       </div>
       <div className='body'>
 
