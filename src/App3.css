@@ -6,7 +6,7 @@
 /* --- Base & Background --- */
 body {
   margin: 0;
-  background: radial-gradient(circle at center, #2c3e50 0%, #000000 100%);
+  background: radial-gradient(circle at center, #2c3e50 0%, #0a0a0a 100%);
   color: white;
   min-height: 100vh;
 }
@@ -22,12 +22,13 @@ body {
 .logo {
   width: 380px;
   margin: 40px 0;
-  filter: drop-shadow(0 0 15px rgba(255, 203, 5, 0.4));
-  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  
+  transition: all ease-in-out 0.4s ;
 }
 
 .logo:hover {
-  transform: scale(1.1) rotate(2deg);
+  transform: scale(1.1) rotate(10deg);
+  filter: drop-shadow(0 0 15px rgba(255, 203, 15, 2));
 }
 
 /* --- Barre de Recherche (Moderne) --- */
@@ -126,9 +127,11 @@ body {
   flex-direction: column;
   align-items: center;
   /* On mélange ton dégradé avec une légère transparence */
-  background: linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(99,99,99,0.8) 100%);
+  /* background: linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(99,99,99,0.8) 100%); */
+    background: rgba(255, 255, 255, 0.07);
+
   backdrop-filter: blur(5px);
-  border: 2px solid rgba(255,255,255,0.2);
+  border: 4px solid rgba(255,255,255,0.2);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
   position: relative;
@@ -136,24 +139,57 @@ body {
 
 .cardPkmn:hover {
   transform: translateY(-10px) scale(1.05);
-  border-color: #ffcb05; /* Bordure jaune au survol */
-  box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+  border-color: gray; /* Bordure jaune au survol */
+  box-shadow: 0 0 35px #ffcd058a;
 }
 .imageContainer{
     position: relative;
+    /* background-color: red; */
+    width: 250px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .imagePkmn {
-  width: 180px;
-  margin-top: 15px;
-  background-color: rgba(255, 255, 255, 0.5); /* Plus doux que le blanc pur */
+  width: 250px;
+  /* margin-top: 15px; */
+  margin: 0;
+  /* background-color: rgba(255, 255, 255, 0.5); Plus doux que le blanc pur */
   border-radius: 15px;
   padding: 10px;
-  border: 1px solid rgba(0,0,0,0.05);
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+  /* border: 1px solid rgba(0,0,0,0.05); */
+}
+.pokeball_message {
+  --size:30px;
+position: absolute;
+top: 20px;
+right: 15px;
+height: var(--size);
+width: var(--size);
+background: linear-gradient(180deg, #f00000 48%, #222224 49%, #222224 50%, #f0f0f0 51%);
+  border-radius: 50%;
+  border: solid #222224 calc(var(--size) * 0.1);
+}
+
+.pokeball_message::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width:  calc(var(--size)*0.2);  
+  height:  calc(var(--size)*0.2);
+  background: #f0f0f0 ;
+  border:  calc(var(--size)*0.1) solid #222224; 
+  border-radius: 50%;
+  z-index: 2; 
 }
 .pokeball {
 position: absolute;
-top: 20px;
+top: 15px;
 right: 15px;
 height: 30px;
 width: 30px;
@@ -175,9 +211,44 @@ background: linear-gradient(180deg, #f00000 48%, #222224 49%, #222224 50%, #f0f0
   border-radius: 50%;
   z-index: 2; 
 }
+.atk, .def{
+  position: absolute;
+  
+  font-size: 1.2em;
+  letter-spacing: 5px;
+  color: grey;
+    font-family: 'Poppins', sans-serif; /* Style moderne sans-serif */
+    width: 100%;
+    font-weight:200;
+    padding-bottom: 20px;
+    /* background-color: red; */
 
+}
+.atk span,.def span{
+  font-weight: 800;
+}
+.atk{
+  bottom: -80px;
+  left: -80px;
+}
+.def{
+  left: -80px;
+  bottom: -110px;
+}
 
-.nomPkmn, .idPkmn{
+.idPkmn{
+  font-family: 'Poppins', sans-serif; /* Style moderne sans-serif */
+  font-size: 1em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 10px 0;
+  color: grey;
+  text-align: left;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.nomPkmn{
   font-family: 'Poppins', sans-serif; /* Style moderne sans-serif */
   font-size: 1.8em;
   text-transform: uppercase;
@@ -200,7 +271,6 @@ background: linear-gradient(180deg, #f00000 48%, #222224 49%, #222224 50%, #f0f0
 width: 80%;
 height: 50px;
 border-radius: 20px;
-  margin: 10px;
 border: none;
   p{
     font-size: 1.2em;
@@ -261,7 +331,7 @@ font-size: 2em;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(50%,-110%);
+  transform: translate(-55%,-110%);
   width: 60px;  
   height: 60px;
   background: #f0f0f0 ;
@@ -273,9 +343,11 @@ font-size: 2em;
 .equipe-container .cardPkmn {
   width: 230px;
   height: 450px;
-  padding: 10px;
+  /* padding: 10px; */
   font-size: 0.7em;
   z-index: 2;
+    background: rgba(93, 89, 89, 0.446);
+
 }
 
 .equipe-container .idPkmn { 
@@ -284,18 +356,46 @@ font-size: 2em;
 }
 .equipe-container .nomPkmn { font-size: 1.8em; }
 .equipe-container .btnPkmn { display: none; } /* On cache le bouton dans l'équipe */
-/* --- Types (Minimalistes) --- */
+.equipe-container .imageContainer{
+  /* background-color: red; */
+  /* height: 150%; */
+  display: flex;
+    /* transform: translate(80%,30%);
+    z-index: -10; */
+    /* overflow: hidden; */
+
+}
+.equipe-container .imageContainer .imagePkmn{
+  /* background-color: red; */
+  height: 150%;
+  width: 150%;
+}
+
+.equipe-container .imageContainer .atk { 
+  font-size: 1.8em;
+  position: absolute;
+  left: -10px;
+  bottom: -200px;
+} /* On cache le bouton dans l'équipe */
+.equipe-container .imageContainer .def { 
+  font-size: 1.8em;
+  position: absolute;
+  left: -10px;
+  bottom: -230px;
+} 
+.atk, .def{
+  text-align: center;
+}
 .type {
   font-size: 0.9em;
   padding: 5px 12px;
   border-radius: 8px;
   display: inline-block;
-  margin: 5px;
+  margin-top: 80px;
   text-transform: uppercase;
   width: 80%;
   text-align: center;
   font-size: 1.8em;
-  margin: 20px;
 }
 
 .Plante{
@@ -346,7 +446,136 @@ font-size: 2em;
   background-color: cadetblue;
 }
 /* --- Modale Message (Style Alerte futuriste) --- */
+.messageAreaShow{
+  position: fixed;
+  top: 100px;
+  width: 100%;
+  height: 350px;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-bottom: 5px solid #222224;
+  z-index: 1000;
+}
+.messageAreaHidden{
+  z-index: -100;
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
 .messageShow {
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  /* background-color: red; */
+  height: 80%;
+  width: 80%;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'PokemonVideoGame', sans-serif;
+  color: #ffcb05;
+  -webkit-text-stroke: 2px #3b4cca;
+  font-size: 3.5em;
+  letter-spacing: 4px;
+}
+
+.messageText{
+  z-index: 1000;
+}
+#pk1{
+  position: absolute;
+  top:170px;
+  left: -50px;
+  height: calc(var(--size)*5.5);
+  width: calc(var(--size)*5.5);
+  transform: translate(20px, 10px) scale(1.2) rotate(70deg);
+  z-index: 2;
+}
+#pk1::after{
+  height: calc(var(--size)*1.1);
+  width: calc(var(--size)*1.1);
+  border: calc(var(--size)*0.15) solid #222224;
+}
+#pk2{
+  position: absolute;
+  top:100px;
+  left: 80px;
+  height: calc(var(--size)*4.2);
+  width: calc(var(--size)*4.2);
+  transform: translate(20px, 10px) scale(1.2) rotate(-20deg);
+  z-index: 1;
+}
+#pk2::after{
+  height: calc(var(--size)*1.1);
+  width: calc(var(--size)*1.1);
+  border: calc(var(--size)*0.15) solid #222224;
+}
+
+
+
+#pk3{
+  position: absolute;
+  top:-50px;
+  left: 380px;
+  height: calc(var(--size)*3.5);
+  width: calc(var(--size)*3.5);;
+  transform: translate(20px, 10px) scale(1.2) rotate(30deg);
+  z-index: 1;
+}
+#pk3::after{
+  height: calc(var(--size)*0.7);
+  width: calc(var(--size)*0.7);
+}
+
+#pk4{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: calc(var(--size)*3.8);
+  width: calc(var(--size)*3.8);
+  transform: translate(20px, 10px) scale(1.2) rotate(-70deg);
+  z-index: 1;
+}
+#pk4::after{
+  height: calc(var(--size)*1.1);
+  width: calc(var(--size)*1.1);
+  border: calc(var(--size)*0.1) solid #222224;
+}
+
+#pk5{
+  position: absolute;
+  top: 280px;
+  right: 0px;
+  height: calc(var(--size)*3);
+  width: calc(var(--size)*3);
+  transform: translate(20px, 10px) scale(1.2) rotate(-40deg);
+  z-index: 1;
+}
+#pk5::after{
+  height: calc(var(--size)*0.6);
+  width: calc(var(--size)*0.6);
+}
+
+#pk6{
+  position: absolute;
+  top: 20px;
+  right: 70px;
+  height: calc(var(--size)*2.2);
+  width: calc(var(--size)*2.2);
+  transform: translate(20px, 10px) scale(1.2) rotate(43deg);
+  z-index: 1;
+}
+#pk6::after{
+  height: calc(var(--size)*0.4);
+  width: calc(var(--size)*0.4);
+  border: calc(var(--size)*0.1) solid #222224;
+}
+
+
+/* .messageShow {
   position: fixed;
   top: 50px;
   left: 0;
@@ -364,7 +593,7 @@ font-size: 2em;
   background: linear-gradient(180deg, #f00000 48%, #222224 49%, #222224 50%, #f0f0f0 51%);
   border: 5px solid #222224;
   text-align: center;
-}
+} 
 
 .messageShow::after {
   content: "";
@@ -378,4 +607,4 @@ font-size: 2em;
   border: 6px solid #222224; 
   border-radius: 50%;
   z-index: -1; 
-}
+}*/

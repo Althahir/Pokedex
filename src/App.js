@@ -29,7 +29,7 @@ useEffect(() => {
         setListFav([...listFav,id]);
       }
       else{
-        setMessage("Equipe pleine !")
+        setMessage("Equipe compéte !")
         setTimeout(() => {
           setMessage("")
         }, 3000);
@@ -65,7 +65,9 @@ const pkmnNew=pkmnList
       isFav={listFav.includes(el.id)}
       onFavClick={favPokemon} 
       nbfav={listFav}
-      showPkball={true}/>
+      showPkball={true}
+      statsAtk={el.stats.atk}
+      statsDef={el.stats.def}/>
 
 
     )
@@ -83,6 +85,8 @@ const afficherFav = () => {
           key={pk.id} 
           id={pk.id} 
           nom={pk.nom} 
+          statsAtk={pk.stats.atk}
+          statsDef={pk.stats.def}
           type={pk.type} 
           image={pk.image}
           isFav={true} 
@@ -100,7 +104,8 @@ const afficherFav = () => {
 return (
     <div className="App">
       <img className="logo" src={logo}></img>
-      <p className={message.includes("Equipe") ? "messageShow" : "messageHide"} >{message}</p>
+      {/* <p className= "messageShow" >{message}</p> */}
+      {/* <p className={message.includes("Equipe") ? "messageShow" : "messageHide"} >{message}</p> */}
       {/* <p className='message'>{message}</p> */}
       <div className='search'>
         <input className='searchPkmn' placeholder='Entrer un nom' value={recherche} onChange={(event)=>setRecherche(event.target.value)}></input>
@@ -115,6 +120,18 @@ return (
             </div>
              <button className='reinitEquipe' onClick={reinitEquipe}>Reinitialiser l'équipe</button>
       </div>
+      <div className={message.includes("Equipe") ? "messageAreaShow" : "messageAreaHidden"}>
+        <div className='messageShow'>
+          <div className='pokeball_message' id="pk1"></div>
+          <div className='pokeball_message' id="pk2"></div>
+          <div className='pokeball_message' id="pk3"></div>
+          <h2 className='messageText'>{message}</h2>
+          <div className='pokeball_message' id="pk4"></div>
+          <div className='pokeball_message' id="pk5"></div>
+          <div className='pokeball_message' id="pk6"></div>
+          
+        </div>
+      </div>  
       <div className='body'>
 
            

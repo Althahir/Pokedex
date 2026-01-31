@@ -2,7 +2,7 @@ import React from "react"
 import { useState } from "react"
 
 
-const PokemonList =({id,nom,type,image, isFav, onFavClick, nbfav,showPkball})=>{
+const PokemonList =({id,nom,type,image,statsAtk,statsDef, isFav, onFavClick, nbfav,showPkball})=>{
  
  
  
@@ -13,6 +13,8 @@ const PokemonList =({id,nom,type,image, isFav, onFavClick, nbfav,showPkball})=>{
             <p className="nomPkmn">{nom}</p>
             <div className="imageContainer">
                 <img src={image} className="imagePkmn" alt="" />
+                <p className="atk">Atk. :<span>{statsAtk}</span></p>
+                <p className="def">Déf. :<span>{statsDef}</span></p>
                 {isFav && showPkball
                     ? <div className="pokeball"></div>
                     : <div></div>}
