@@ -6,7 +6,7 @@
 /* --- Base & Background --- */
 body {
   margin: 0;
-  background: radial-gradient(circle at center, #2c3e50 0%, #0a0a0a 100%);
+  background: radial-gradient(circle at center, #85bff8 0%, #0a0a0a 100%);
   color: white;
   min-height: 100vh;
 }
@@ -16,7 +16,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 50px;
+  padding-bottom: 500px;
+  overflow: hidden;
 }
 
 /* --- Logo --- */
@@ -161,7 +162,8 @@ body {
 }
 
 .imagePkmn {
-  width: 250px;
+  width: 300px;
+  height: 300px;
   /* margin-top: 15px; */
   margin: 0;
   /* background-color: rgba(255, 255, 255, 0.5); Plus doux que le blanc pur */
@@ -411,6 +413,17 @@ font-size: 2em;
   text-align: center;
   font-size: 1.8em;
 }
+.card{
+    
+  /* Paramètres essentiels pour que l'image rende bien */
+  background-size: cover;      /* L'image remplit toute la carte */
+  background-position: center; /* L'image est centrée */
+  background-repeat: no-repeat;
+  
+  /* Optionnel : ajouter un léger voile sombre pour que le texte reste lisible */
+  background-blend-mode: overlay;
+  background-color: rgba(0, 0, 0, 0.2); 
+}
 
 .Plante{
   background-color: green;
@@ -419,14 +432,7 @@ font-size: 2em;
   /* Pas de "src=", juste url() */
   background-image: url("./5.png"); 
   
-  /* Paramètres essentiels pour que l'image rende bien */
-  background-size: cover;      /* L'image remplit toute la carte */
-  background-position: center; /* L'image est centrée */
-  background-repeat: no-repeat;
-  
-  /* Optionnel : ajouter un léger voile sombre pour que le texte reste lisible */
-  background-blend-mode: overlay;
-  background-color: rgba(0, 0, 0, 0.2); 
+ 
 }
 .Eau{
   background-color: blue;
@@ -434,15 +440,14 @@ font-size: 2em;
 .cardEau {
   /* Pas de "src=", juste url() */
   background-image: url("./1.png"); 
-  
-  /* Paramètres essentiels pour que l'image rende bien */
-  background-size: cover;      /* L'image remplit toute la carte */
+    background-size: cover;      /* L'image remplit toute la carte */
   background-position: center; /* L'image est centrée */
   background-repeat: no-repeat;
   
   /* Optionnel : ajouter un léger voile sombre pour que le texte reste lisible */
   background-blend-mode: overlay;
   background-color: rgba(0, 0, 0, 0.2); 
+ 
 }
 .Feu{
   background-color: orange;
@@ -451,8 +456,6 @@ font-size: 2em;
 .cardFeu{
   /* Pas de "src=", juste url() */
   background-image: url("./6.png"); 
-  
-  /* Paramètres essentiels pour que l'image rende bien */
   background-size: cover;      /* L'image remplit toute la carte */
   background-position: center; /* L'image est centrée */
   background-repeat: no-repeat;
@@ -467,15 +470,14 @@ font-size: 2em;
 .cardInsecte {
   /* Pas de "src=", juste url() */
   background-image: url("./7.png"); 
-  
-  /* Paramètres essentiels pour que l'image rende bien */
-  background-size: cover;      /* L'image remplit toute la carte */
+    background-size: cover;      /* L'image remplit toute la carte */
   background-position: center; /* L'image est centrée */
   background-repeat: no-repeat;
   
   /* Optionnel : ajouter un léger voile sombre pour que le texte reste lisible */
   background-blend-mode: overlay;
   background-color: rgba(0, 0, 0, 0.2); 
+ 
 }
 
 .Normal{
@@ -484,15 +486,14 @@ font-size: 2em;
 .cardNormal {
   /* Pas de "src=", juste url() */
   background-image: url("./8.png"); 
-  
-  /* Paramètres essentiels pour que l'image rende bien */
-  background-size: cover;      /* L'image remplit toute la carte */
+    background-size: cover;      /* L'image remplit toute la carte */
   background-position: center; /* L'image est centrée */
   background-repeat: no-repeat;
   
   /* Optionnel : ajouter un léger voile sombre pour que le texte reste lisible */
   background-blend-mode: overlay;
   background-color: rgba(0, 0, 0, 0.2); 
+ 
 }
 .Poison{
   background-color: purple;
@@ -500,15 +501,14 @@ font-size: 2em;
 .cardPoison {
   /* Pas de "src=", juste url() */
   background-image: url("./14.png"); 
-  
-  /* Paramètres essentiels pour que l'image rende bien */
-  background-size: cover;      /* L'image remplit toute la carte */
+    background-size: cover;      /* L'image remplit toute la carte */
   background-position: center; /* L'image est centrée */
   background-repeat: no-repeat;
   
   /* Optionnel : ajouter un léger voile sombre pour que le texte reste lisible */
   background-blend-mode: overlay;
   background-color: rgba(0, 0, 0, 0.2); 
+ 
 }
 .Electrik{
   background-color: yellow;
@@ -517,15 +517,14 @@ font-size: 2em;
 .cardElectrik {
   /* Pas de "src=", juste url() */
   background-image: url("./2.png"); 
-  
-  /* Paramètres essentiels pour que l'image rende bien */
-  background-size: cover;      /* L'image remplit toute la carte */
+   background-size: cover;      /* L'image remplit toute la carte */
   background-position: center; /* L'image est centrée */
   background-repeat: no-repeat;
   
   /* Optionnel : ajouter un léger voile sombre pour que le texte reste lisible */
   background-blend-mode: overlay;
-  background-color: rgba(0, 0, 0, 0.2); 
+  background-color: rgba(0, 0, 0, 0.2);  
+ 
 }
 .Sol{
   background-color: brown;
@@ -533,15 +532,14 @@ font-size: 2em;
 .cardSol {
   /* Pas de "src=", juste url() */
   background-image: url("./10.png"); 
-  
-  /* Paramètres essentiels pour que l'image rende bien */
-  background-size: cover;      /* L'image remplit toute la carte */
+    background-size: cover;      /* L'image remplit toute la carte */
   background-position: center; /* L'image est centrée */
   background-repeat: no-repeat;
   
   /* Optionnel : ajouter un léger voile sombre pour que le texte reste lisible */
   background-blend-mode: overlay;
   background-color: rgba(0, 0, 0, 0.2); 
+ 
 }
 .Fée{
   background-color: pink;
@@ -549,15 +547,14 @@ font-size: 2em;
 .cardFée {
   /* Pas de "src=", juste url() */
   background-image: url("./4.png"); 
-  
-  /* Paramètres essentiels pour que l'image rende bien */
-  background-size: cover;      /* L'image remplit toute la carte */
+    background-size: cover;      /* L'image remplit toute la carte */
   background-position: center; /* L'image est centrée */
   background-repeat: no-repeat;
   
   /* Optionnel : ajouter un léger voile sombre pour que le texte reste lisible */
   background-blend-mode: overlay;
   background-color: rgba(0, 0, 0, 0.2); 
+ 
 }
 .Combat{
   background-color: rgb(255, 77, 0);
@@ -565,15 +562,14 @@ font-size: 2em;
 .cardCombat {
   /* Pas de "src=", juste url() */
   background-image: url("./15.png"); 
-  
-  /* Paramètres essentiels pour que l'image rende bien */
-  background-size: cover;      /* L'image remplit toute la carte */
+    background-size: cover;      /* L'image remplit toute la carte */
   background-position: center; /* L'image est centrée */
   background-repeat: no-repeat;
   
   /* Optionnel : ajouter un léger voile sombre pour que le texte reste lisible */
   background-blend-mode: overlay;
   background-color: rgba(0, 0, 0, 0.2); 
+ 
 }
 .Psy{
   background-color: rgb(239, 54, 85);
@@ -581,15 +577,14 @@ font-size: 2em;
 .cardPsy {
   /* Pas de "src=", juste url() */
   background-image: url("./3.png"); 
-  
-  /* Paramètres essentiels pour que l'image rende bien */
-  background-size: cover;      /* L'image remplit toute la carte */
+    background-size: cover;      /* L'image remplit toute la carte */
   background-position: center; /* L'image est centrée */
   background-repeat: no-repeat;
   
   /* Optionnel : ajouter un léger voile sombre pour que le texte reste lisible */
   background-blend-mode: overlay;
   background-color: rgba(0, 0, 0, 0.2); 
+ 
 }
 .Roche{
   background-color: rgb(66, 93, 2);
@@ -597,15 +592,14 @@ font-size: 2em;
 .cardRoche {
   /* Pas de "src=", juste url() */
   background-image: url("./13.png"); 
-  
-  /* Paramètres essentiels pour que l'image rende bien */
-  background-size: cover;      /* L'image remplit toute la carte */
+    background-size: cover;      /* L'image remplit toute la carte */
   background-position: center; /* L'image est centrée */
   background-repeat: no-repeat;
   
   /* Optionnel : ajouter un léger voile sombre pour que le texte reste lisible */
   background-blend-mode: overlay;
   background-color: rgba(0, 0, 0, 0.2); 
+ 
 }
 .Spectre{
   background-color: rgb(59, 2, 59);
@@ -613,15 +607,14 @@ font-size: 2em;
 .cardSpectre {
   /* Pas de "src=", juste url() */
   background-image: url("./15.png"); 
-  
-  /* Paramètres essentiels pour que l'image rende bien */
-  background-size: cover;      /* L'image remplit toute la carte */
+    background-size: cover;      /* L'image remplit toute la carte */
   background-position: center; /* L'image est centrée */
   background-repeat: no-repeat;
   
   /* Optionnel : ajouter un léger voile sombre pour que le texte reste lisible */
   background-blend-mode: overlay;
   background-color: rgba(0, 0, 0, 0.2); 
+ 
 }
 .Dragon{
   background-color: cadetblue;
@@ -629,15 +622,14 @@ font-size: 2em;
 .cardDragon {
   /* Pas de "src=", juste url() */
   background-image: url("./12.png"); 
-  
-  /* Paramètres essentiels pour que l'image rende bien */
-  background-size: cover;      /* L'image remplit toute la carte */
+    background-size: cover;      /* L'image remplit toute la carte */
   background-position: center; /* L'image est centrée */
   background-repeat: no-repeat;
   
   /* Optionnel : ajouter un léger voile sombre pour que le texte reste lisible */
   background-blend-mode: overlay;
   background-color: rgba(0, 0, 0, 0.2); 
+ 
 }
 .Glace{
   background-color: rgb(255, 255, 255);
@@ -646,15 +638,14 @@ font-size: 2em;
 .cardGlace {
   /* Pas de "src=", juste url() */
   background-image: url("./11.png"); 
-  
-  /* Paramètres essentiels pour que l'image rende bien */
-  background-size: cover;      /* L'image remplit toute la carte */
+    background-size: cover;      /* L'image remplit toute la carte */
   background-position: center; /* L'image est centrée */
   background-repeat: no-repeat;
   
   /* Optionnel : ajouter un léger voile sombre pour que le texte reste lisible */
   background-blend-mode: overlay;
   background-color: rgba(0, 0, 0, 0.2); 
+ 
 }
 /* --- Modale Message (Style Alerte futuriste) --- */
 .messageAreaShow{
