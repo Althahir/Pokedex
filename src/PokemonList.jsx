@@ -11,12 +11,17 @@ const PokemonList =({id,nom,type,image, isFav, onFavClick, nbfav})=>{
         <div className="cardPkmn">
             <p className="idPkmn">Id : {id}</p>
             <p className="nomPkmn">{nom}</p>
-            <img src={image} className="imagePkmn" alt="" />
+            <div className="imageContainer">
+                <img src={image} className="imagePkmn" alt="" />
+                {isFav
+                    ? <div className="pokeball"></div>
+                    : <div></div>}
+            </div>
             <p className={`type ${type}`}>{type}</p>
             <button className="btnPkmn" onClick={() => onFavClick(id)}>
                 {isFav 
                     ? (
-                    <div className="isFav"><p>Dans l'équipe !</p><div className="pokeball"></div></div>
+                    <div className="isFav"><p>Dans l'équipe !</p></div>
                         ) 
                     : nbfav.length >= 6 
                         ? (
