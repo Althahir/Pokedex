@@ -2,7 +2,7 @@ import React from "react"
 import { useState } from "react"
 
 
-const PokemonList =({id,nom,type,image, isFav, onFavClick, nbfav})=>{
+const PokemonList =({id,nom,type,image, isFav, onFavClick, nbfav,showPkball})=>{
  
  
  
@@ -13,12 +13,13 @@ const PokemonList =({id,nom,type,image, isFav, onFavClick, nbfav})=>{
             <p className="nomPkmn">{nom}</p>
             <div className="imageContainer">
                 <img src={image} className="imagePkmn" alt="" />
-                {isFav
+                {isFav && showPkball
                     ? <div className="pokeball"></div>
                     : <div></div>}
             </div>
             <p className={`type ${type}`}>{type}</p>
-            <button className="btnPkmn" onClick={() => onFavClick(id)}>
+            {showPkball
+                ? <button className="btnPkmn" onClick={() => onFavClick(id)}>
                 {isFav 
                     ? (
                     <div className="isFav"><p>Dans l'équipe !</p></div>
@@ -30,7 +31,10 @@ const PokemonList =({id,nom,type,image, isFav, onFavClick, nbfav})=>{
                         : (
                          <p className="ajoutEquipe">Mettre dans l'équipe ?</p>
                          )}
-            </button>
+                    </button>
+                :   null
+                }
+            
             {/* <button className="btnPkmn" onClick={() => onFavClick(id)}>
                 {isFav 
                     ? <div className="isFav"><p>Dans l'équipe !</p><div className="pokeball"></div></div>

@@ -1,0 +1,381 @@
+@font-face {
+  font-family: 'PokemonVideoGame';
+  src: url('./fonts/Pokemon Solid.ttf') format('truetype');
+}
+
+/* --- Base & Background --- */
+body {
+  margin: 0;
+  background: radial-gradient(circle at center, #2c3e50 0%, #000000 100%);
+  color: white;
+  min-height: 100vh;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 50px;
+}
+
+/* --- Logo --- */
+.logo {
+  width: 380px;
+  margin: 40px 0;
+  filter: drop-shadow(0 0 15px rgba(255, 203, 5, 0.4));
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.logo:hover {
+  transform: scale(1.1) rotate(2deg);
+}
+
+/* --- Barre de Recherche (Moderne) --- */
+.search {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+}
+
+.searchPkmn {
+  width: 50%;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(59, 76, 202, 0.5);
+  border-radius: 12px;
+  color: #ffcb05;
+  font-family: 'Inter', sans-serif; /* Plus moderne pour l'input */
+  font-size: 1.2rem;
+  padding: 12px 25px;
+  outline: none;
+  transition: all 0.3s;
+}
+
+.searchPkmn:focus {
+  border-color: #ffcb05;
+  box-shadow: 0 0 15px rgba(255, 203, 5, 0.2);
+}
+.deleteSearch{
+  max-width: 15%;
+  height: 60px; 
+  border: 1px solid #636363;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  font-family: 'PokemonVideoGame', sans-serif;
+  font-size: 2rem;
+  color: #ffcb05; /* Le jaune officiel */
+  /* background-color: white; */
+  padding: 30px;
+  -webkit-text-stroke: 2px #3b4cca; /* Le contour bleu officiel */
+  letter-spacing: 4px;
+  /* filter: drop-shadow(4px 4px 0px #3b4cca); */
+  transition: all ease-in-out 0.2s;
+  margin-left: 50px;
+
+}
+.deleteSearch:hover{
+  transform: scale(1.02);
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.367);
+}
+
+  
+.cardPkmn.empty {
+  border: 2px dashed #ccc;
+  background-color: #f9f9f9;
+  opacity: 0.6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 430px; /* À ajuster selon la taille de tes vraies cartes */
+  color: grey;
+}
+
+.silhouette {
+  font-size: 12em;
+  color: grey;
+  font-weight: bold;
+}
+/* --- Cartes Pokémon (Glassmorphism) --- */
+.body {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 40px;
+  width: 100%;
+  max-width: 1400px;
+}
+
+.cardPkmn {
+    height: 480px;
+  width: 250px;
+  margin: 20px;
+  padding: 30px;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* On mélange ton dégradé avec une légère transparence */
+  background: linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(99,99,99,0.8) 100%);
+  backdrop-filter: blur(5px);
+  border: 2px solid rgba(255,255,255,0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  position: relative;
+}
+
+.cardPkmn:hover {
+  transform: translateY(-10px) scale(1.05);
+  border-color: #ffcb05; /* Bordure jaune au survol */
+  box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+}
+.imageContainer{
+    position: relative;
+}
+
+.imagePkmn {
+  width: 180px;
+  margin-top: 15px;
+  background-color: rgba(255, 255, 255, 0.5); /* Plus doux que le blanc pur */
+  border-radius: 15px;
+  padding: 10px;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+.pokeball {
+position: absolute;
+top: 20px;
+right: 15px;
+height: 30px;
+width: 30px;
+background: linear-gradient(180deg, #f00000 48%, #222224 49%, #222224 50%, #f0f0f0 51%);
+  border-radius: 50%;
+  border: 1px solid #222224;
+}
+
+.pokeball::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;  
+  height: 8px;
+  background: #f0f0f0 ;
+  border: 2.5px solid #222224; 
+  border-radius: 50%;
+  z-index: 2; 
+}
+
+
+.nomPkmn, .idPkmn{
+  font-family: 'Poppins', sans-serif; /* Style moderne sans-serif */
+  font-size: 1.8em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 10px 0;
+  color: grey;
+}
+
+
+
+.cardPkmn:hover {
+  transform: scale(1.1);
+}
+
+/* --- Boutons (Style Premium) --- */
+.btnPkmn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+width: 80%;
+height: 50px;
+border-radius: 20px;
+  margin: 10px;
+border: none;
+  p{
+    font-size: 1.2em;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    border-radius: 20px;
+    width: 100%;
+      /* span{
+        font-size: 1.5em;
+      } */
+  }
+
+  }
+.btnPkmn:hover {
+  background: grey;
+  color: white;
+}
+.equipeMax{
+  color: red;
+}
+/* --- Équipe (Bento Style) --- */
+.equipe{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 700px;
+    position: relative;
+}
+
+  .reinitEquipe{
+    /* margin-top: 20px; */
+    padding: 0px 80px;
+    border-radius: 50px;
+    /* color: red */
+    font-family: 'PokemonVideoGame', sans-serif;
+    color: #ffcb05; /* Le jaune officiel */
+-webkit-text-stroke: 2px #3b4cca;
+letter-spacing: 4px;
+/* padding: 10px; */
+border:3px solid  #222224;
+font-size: 2em;
+    transition: all ease-in-out 0.2s;
+
+  }
+.equipe-container {
+  background: linear-gradient(180deg, #f00000 48%, #222224 49%, #222224 50%, #f0f0f0 51%);
+  border: 8px solid #222224;
+  display: flex;
+  flex-direction: row;
+  border-radius: 100px; /* Un peu plus arrondi pour le style moderne */
+  padding: 20px;
+  margin: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+.equipe-container::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(50%,-110%);
+  width: 60px;  
+  height: 60px;
+  background: #f0f0f0 ;
+  border: 8px solid #222224; 
+  border-radius: 50%;
+  z-index: 1; 
+}
+/* Les petites cartes de l'équipe */
+.equipe-container .cardPkmn {
+  width: 230px;
+  height: 450px;
+  padding: 10px;
+  font-size: 0.7em;
+  z-index: 2;
+}
+
+.equipe-container .idPkmn { 
+    font-size: 1.8em; 
+    color: grey;
+}
+.equipe-container .nomPkmn { font-size: 1.8em; }
+.equipe-container .btnPkmn { display: none; } /* On cache le bouton dans l'équipe */
+/* --- Types (Minimalistes) --- */
+.type {
+  font-size: 0.9em;
+  padding: 5px 12px;
+  border-radius: 8px;
+  display: inline-block;
+  margin: 5px;
+  text-transform: uppercase;
+  width: 80%;
+  text-align: center;
+  font-size: 1.8em;
+  margin: 20px;
+}
+
+.Plante{
+  background-color: green;
+}
+.Eau{
+  background-color: blue;
+}
+.Feu{
+  background-color: orange;
+
+}
+.Insecte{
+  background-color: rgb(1, 50, 1);
+}
+.Vol{
+  background-color: rgb(79, 79, 239);
+}
+.Normal{
+  background-color: grey;
+}
+.Poison{
+  background-color: purple;
+}
+.Electrik{
+  background-color: yellow;
+  color: orange;
+}
+.Sol{
+  background-color: brown;
+}
+.Fée{
+  background-color: pink;
+}
+.Combat{
+  background-color: rgb(255, 77, 0);
+}
+.Psy{
+  background-color: rgb(239, 54, 85);
+}
+.Roche{
+  background-color: rgb(66, 93, 2);
+}
+.Spectre{
+  background-color: rgb(59, 2, 59);
+}
+.Dragon{
+  background-color: cadetblue;
+}
+/* --- Modale Message (Style Alerte futuriste) --- */
+.messageShow {
+  position: fixed;
+  top: 50px;
+  left: 0;
+  height: 150px;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'PokemonVideoGame', sans-serif;
+  color: #ffcb05;
+  -webkit-text-stroke: 2px #3b4cca;
+  font-size: 3.5em;
+  letter-spacing: 4px;
+  background: linear-gradient(180deg, #f00000 48%, #222224 49%, #222224 50%, #f0f0f0 51%);
+  border: 5px solid #222224;
+  text-align: center;
+}
+
+.messageShow::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30px;  
+  height: 30px;
+  background: white;
+  border: 6px solid #222224; 
+  border-radius: 50%;
+  z-index: -1; 
+}

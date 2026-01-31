@@ -314,6 +314,9 @@ border: none;
   justify-content: center;
   align-items: center;
 }
+.spaceFav{
+  height: 50px;
+}
 .equipeMax{
   color: red;
 }

@@ -1,5 +1,5 @@
 
-import './App.css';
+import './App3.css';
 import pkmnList from "./pokedex.json"
 import PokemonList from './PokemonList';
 import logo from  './logo.png'
@@ -64,7 +64,8 @@ const pkmnNew=pkmnList
       image={el.image}
       isFav={listFav.includes(el.id)}
       onFavClick={favPokemon} 
-      nbfav={listFav}/>
+      nbfav={listFav}
+      showPkball={true}/>
 
 
     )
@@ -86,6 +87,7 @@ const afficherFav = () => {
           image={pk.image}
           isFav={true} 
           onFavClick={favPokemon} 
+          showPkball={false}
         />
       );
     } else {

@@ -1,0 +1,177 @@
+@font-face {
+  font-family: 'PokemonVideoGame';
+  src: url('./fonts/Pokemon Solid.ttf') format('truetype');
+}
+
+/* --- Base & Background --- */
+body {
+  margin: 0;
+  background: radial-gradient(circle at center, #2c3e50 0%, #000000 100%);
+  color: white;
+  min-height: 100vh;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 50px;
+}
+
+/* --- Logo --- */
+.logo {
+  width: 280px;
+  margin: 40px 0;
+  filter: drop-shadow(0 0 15px rgba(255, 203, 5, 0.4));
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.logo:hover {
+  transform: scale(1.1) rotate(2deg);
+}
+
+/* --- Barre de Recherche (Moderne) --- */
+.search {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+}
+
+.searchPkmn {
+  width: 50%;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(59, 76, 202, 0.5);
+  border-radius: 12px;
+  color: #ffcb05;
+  font-family: 'Inter', sans-serif; /* Plus moderne pour l'input */
+  font-size: 1.2rem;
+  padding: 12px 25px;
+  outline: none;
+  transition: all 0.3s;
+}
+
+.searchPkmn:focus {
+  border-color: #ffcb05;
+  box-shadow: 0 0 15px rgba(255, 203, 5, 0.2);
+}
+
+/* --- Cartes Pokémon (Glassmorphism) --- */
+.body {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 40px;
+  width: 100%;
+  max-width: 1400px;
+}
+
+.cardPkmn {
+  width: 280px;
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.cardPkmn:hover {
+  transform: translateY(-12px);
+  border-color: rgba(255, 203, 5, 0.5);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.nomPkmn {
+  font-family: 'Poppins', sans-serif; /* Style moderne sans-serif */
+  font-size: 1.8em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 10px 0;
+  color: #fff;
+}
+
+.imagePkmn {
+  width: 100%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+  border-radius: 20px;
+  padding: 10px;
+  transition: transform 0.3s;
+}
+
+.cardPkmn:hover .imagePkmn {
+  transform: scale(1.1);
+}
+
+/* --- Boutons (Style Premium) --- */
+.btnPkmn {
+  margin-top: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  cursor: pointer;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.btnPkmn:hover {
+  background: #3b4cca;
+  color: white;
+}
+
+/* --- Équipe (Bento Style) --- */
+.equipe-container {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  padding: 15px;
+  display: flex;
+  gap: 15px;
+  margin: 30px 0;
+}
+
+/* Les petites cartes de l'équipe */
+.equipe-container .cardPkmn {
+  width: 120px;
+  padding: 10px;
+  font-size: 0.7em;
+}
+
+.equipe-container .nomPkmn { font-size: 1em; }
+.equipe-container .btnPkmn { display: none; } /* On cache le bouton dans l'équipe */
+
+/* --- Types (Minimalistes) --- */
+.type {
+  font-size: 0.9em;
+  padding: 5px 12px;
+  border-radius: 8px;
+  display: inline-block;
+  margin: 5px;
+  text-transform: uppercase;
+}
+
+.Feu { background: #ff4757; box-shadow: 0 0 10px rgba(255, 71, 87, 0.4); }
+.Eau { background: #2e86de; box-shadow: 0 0 10px rgba(46, 134, 222, 0.4); }
+.Plante { background: #2ed573; box-shadow: 0 0 10px rgba(46, 213, 115, 0.4); }
+
+/* --- Modale Message (Style Alerte futuriste) --- */
+.messageShow {
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(20px);
+  border: none;
+  border-bottom: 3px solid #ffcb05;
+  color: #ffcb05;
+  -webkit-text-stroke: 0; /* Plus propre sans contour pour le moderne */
+  text-shadow: 0 0 20px rgba(255, 203, 5, 0.5);
+}
