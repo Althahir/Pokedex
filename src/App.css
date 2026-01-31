@@ -101,7 +101,7 @@ border: 1px solid #636363;
   text-align: center;
 }
 .deleteSearch{
-  width: 20%;
+  max-width: 15%;
   height: 60px; 
   border: 1px solid #636363;
   border-radius: 20px;
@@ -255,8 +255,8 @@ border: none;
 
   }
 .pokeball {
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   background: linear-gradient(180deg, #f00000 48%, #222224 49%, #222224 50%, #f0f0f0 51%);
   border-radius: 50%;
   border: 1px solid #222224;
@@ -269,8 +269,8 @@ border: none;
 
 .pokeball::after {
   content: "";
-  width: 4px;  
-  height: 4px;
+  width: 8px;  
+  height: 8px;
   background: white;
   border: 2.5px solid #222224; 
   border-radius: 50%;

@@ -4,28 +4,21 @@ import pkmnList from "./pokedex.json"
 import PokemonList from './PokemonList';
 import logo from  './logo.png'
 import { useEffect, useState } from 'react';
-import logoRec from './logoRecherche.png'
 
 
 function App() {
   const [recherche,setRecherche]=useState("")
-  const [listFav,setListFav]=useState([])
   const [message,setMessage]=useState("")
+  const [listFav, setListFav] = useState(() => {
+      const sauvegarde = localStorage.getItem("PkmnFav");
+      return sauvegarde ? JSON.parse(sauvegarde) : [];
+  });
+  
 
-//     useEffect(() => {
-//     if (listFav.length > 0) {
-//       console.log("--- Mes Favoris ---");
-//       listFav.forEach(id => {
-//       On cherche l'objet pokemon complet dans la liste d'origine
-//       const pokemonTrouve = pkmnList.find(p => p.id === id);
-      
-//       if (pokemonTrouve) {
-//         console.log(`ID ${id} : ${pokemonTrouve.nom}`);
-//         localStorage.setItem=("PkmnFav",JSON.stringify)
-//       }
-//     });
-//   }
-// }, [listFav]);
+useEffect(() => {
+  // Dès que listFav change, on sauvegarde automatiquement
+  localStorage.setItem("PkmnFav", JSON.stringify(listFav));
+}, [listFav]); // On surveille listFav
 
   const favPokemon=(id)=>{
     if (listFav.includes(id)){
