@@ -29,7 +29,7 @@ useEffect(() => {
         setListFav([...listFav,id]);
       }
       else{
-        setMessage("Equipe compéte !")
+        setMessage("Equipe compléte !")
         setTimeout(() => {
           setMessage("")
         }, 3000);
@@ -121,6 +121,7 @@ return (
              <button className='reinitEquipe' onClick={reinitEquipe}>Reinitialiser l'équipe</button>
       </div>
       <div className={message.includes("Equipe") ? "messageAreaShow" : "messageAreaHidden"}>
+      {/* <div className="messageAreaShow" > */}
         <div className='messageShow'>
           <div className='pokeball_message' id="pk1"></div>
           <div className='pokeball_message' id="pk2"></div>

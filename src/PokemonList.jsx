@@ -8,7 +8,7 @@ const PokemonList =({id,nom,type,image,statsAtk,statsDef, isFav, onFavClick, nbf
  
     return(
         
-        <div className="cardPkmn">
+        <div className={`cardPkmn card${type}`}>
             <p className="idPkmn">Id : {id}</p>
             <p className="nomPkmn">{nom}</p>
             <div className="imageContainer">

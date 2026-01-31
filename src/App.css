@@ -22,40 +22,6 @@
   transform: scale(1.2);
   /* box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.367); */
 }
-.messageShow{
-  position: fixed;
-  top: 0;
-  left: -20px;
-  height: 200px;
-  height: 150px;
-  width: 110vw;
-  z-index: 5;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* background-color: white; */
-  font-family: 'PokemonVideoGame',sans-serif;
-  color: #ffcb05; /* Le jaune officiel */
--webkit-text-stroke: 3px #3b4cca;
-font-size: 3.5em;
-letter-spacing: 4px;
-border: 10px solid #636363;
-  background: linear-gradient(180deg,#f00000 48%,#222224 49%, #222224 50%, #f0f0f0 51%);
-  border: 10px solid #222224;
-  text-align: center;
-
-}
-.messageShow::after {
-  content: "";
-  position: absolute;
-  transform: translateX(-50%);
-  width: 24px;  
-  height: 24px;
-  background: #f0f0f0 ;
-  border: 5px solid #222224; 
-  border-radius: 50%;
-  z-index: -1; 
-}
 
 .messageHide{
   position: fixed;
