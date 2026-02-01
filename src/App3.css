@@ -9,6 +9,8 @@ body {
   background: radial-gradient(circle at center, #486786 0%, #0a0a0a 100%);
   color: white;
   min-height: 100vh;
+    font-family: 'Poppins', sans-serif; /* Style moderne sans-serif */
+
 }
 
 .App {
@@ -415,7 +417,7 @@ font-size: 2em;
 .atk, .def{
   text-align: center;
 }
-.type {
+.type ,.equipe-container .cardPkmn .type {
   font-size: 0.9em;
   padding: 5px 12px;
   border-radius: 8px;
