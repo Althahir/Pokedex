@@ -1,0 +1,12 @@
+.containerDetail{
+    color: grey;
+    width: 100%;
+}
+
+.nomDetail{
+    text-align: center;
+}
+.pokemon-image{
+    width: 200px;
+    height: 200px;
+}
