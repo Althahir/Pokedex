@@ -1,8 +1,25 @@
 import React from "react"
 import { useState } from "react"
+const typeIcons = {
+  Feu: require('./assets/Feu.png'),
+  Eau: require('./assets/Eau.png'),
+  Plante: require('./assets/Plante.png'),
+  Electrik: require('./assets/Electrik.png'),
+  Psy: require('./assets/Psy.png'),
+  Combat: require('./assets/Combat.png'),
+  Vol: require('./assets/Vol.png'),
+  Fée: require('./assets/Fée.png'),
+  Normal: require('./assets/Normal.png'),
+  Dragon: require('./assets/Dragon.png'),
+  Insecte: require('./assets/Insecte.png'),
+  Poison: require('./assets/Poison.png'),
+  Roche: require('./assets/Roche.png'),
+  Sol: require('./assets/Sol.png'),
+  Spectre: require('./assets/Spectre.png'),
+  // ... ajoute tous tes types
+};
 
-
-const PokemonList =({id,nom,type,image,statsAtk,statsDef, isFav, onFavClick, nbfav,showPkball})=>{
+const PokemonList =({id,nom,type,image,icone,statsAtk,statsDef, isFav, onFavClick, nbfav,showPkball})=>{
  
  
  
@@ -11,6 +28,7 @@ const PokemonList =({id,nom,type,image,statsAtk,statsDef, isFav, onFavClick, nbf
         <div className={`cardPkmn card${type}`}>
             <p className="idPkmn">Id : {id}</p>
             <p className="nomPkmn">{nom}</p>
+            <img className="icone" src={typeIcons[icone]} alt={icone} />
             <div className="imageContainer">
                 <img src={image} className="imagePkmn" alt="" />
                 <p className="atk">Atk. :<span>{statsAtk}</span></p>

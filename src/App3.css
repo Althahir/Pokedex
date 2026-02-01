@@ -160,7 +160,14 @@ body {
     justify-content: center;
     align-items: center;
 }
-
+.icone{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
 .imagePkmn {
   width: 300px;
   height: 300px;
@@ -385,6 +392,12 @@ font-size: 2em;
   /* background-color: red; */
   height: 150%;
   width: 150%;
+}
+.equipe-container .cardPkmn .icone{
+  /* background-color: red; */
+  height: 70px;
+  width: 70px;
+  z-index: 20;
 }
 
 .equipe-container .imageContainer .atk { 

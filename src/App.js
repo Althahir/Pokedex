@@ -62,6 +62,7 @@ const pkmnNew=pkmnList
       nom={el.nom} 
       type={el.type} 
       image={el.image}
+      icone={el.type}
       isFav={listFav.includes(el.id)}
       onFavClick={favPokemon} 
       nbfav={listFav}
@@ -87,6 +88,7 @@ const afficherFav = () => {
           nom={pk.nom} 
           statsAtk={pk.stats.atk}
           statsDef={pk.stats.def}
+          icone={pk.type}
           type={pk.type} 
           image={pk.image}
           isFav={true} 
