@@ -6,7 +6,7 @@ import PokemonList from './PokemonList';
 import logo from  './logo.png'
 import { useEffect, useState } from 'react';
 import PokemonDetails from './PokemonDetails';
-import { Link } from 'react-router-dom';
+import PKB from './pokeball.png'
 
 
 function Home() {
@@ -41,8 +41,10 @@ useEffect(() => {
   }
 const PokemonCardEmpty = () => (
   <div className="cardPkmn empty">
-    <div className="silhouette">?</div>
-    <p>Emplacement vide</p>
+    {/* <div className="silhouette">?</div> */}
+    <img src={PKB} className='equipe-vide' alt="" />
+    <h2 className='emptyText'>?</h2>
+    {/* <p>Emplacement vide</p> */}
   </div>
 );
 
@@ -62,22 +64,23 @@ const pkmnNew=pkmnList
    const currentId = el.pokedex_id || el.id;
 
 return (
-  <Link to={`/pokemon/${currentId}`} key={currentId}>
+  
   <PokemonList 
+  currentId={currentId}
     key={el.id} 
       id={el.id} 
       nom={el.nom} 
-      type={el.type} 
       image={el.image}
       icone={el.type}
       isFav={listFav.includes(el.id)}
       onFavClick={favPokemon} 
+       type={el.type} 
       nbfav={listFav}
       showPkball={true}
       statsAtk={el.stats.atk}
       statsDef={el.stats.def}/>
 
-</Link>
+
     )
   })
 
@@ -89,17 +92,17 @@ const afficherFav = () => {
       const pk = pkmnList.find(p => p.id === listFav[i]);
       equipeVide.push(
         <PokemonList 
-          key={pk.id} 
-          id={pk.id} 
-          nom={pk.nom} 
-          statsAtk={pk.stats.atk}
-          statsDef={pk.stats.def}
-          icone={pk.type}
-          type={pk.type} 
+          // key={pk.id} 
+          // id={pk.id} 
+          // nom={pk.nom} 
+          // statsAtk={pk.stats.atk}
+          // statsDef={pk.stats.def}
+          // icone={pk.type}
+          // type={pk.type} 
           image={pk.image}
-          isFav={true} 
-          onFavClick={favPokemon} 
-          showPkball={false}
+          // isFav={true} 
+          // onFavClick={favPokemon} 
+          // showPkball={false}
         />
       );
     } else {
@@ -132,13 +135,19 @@ return (
       <div className={message.includes("Equipe") ? "messageAreaShow" : "messageAreaHidden"}>
       {/* <div className="messageAreaShow" > */}
         <div className='messageShow'>
-          <div className='pokeball_message' id="pk1"></div>
+          {/* <div className='pokeball_message' id="pk1"></div>
           <div className='pokeball_message' id="pk2"></div>
-          <div className='pokeball_message' id="pk3"></div>
+          <div className='pokeball_message' id="pk3"></div> */}
+          <img src={PKB} className='pokeball_msg' id="pkM1" alt="" />
+          <img src={PKB} className='pokeball_msg' id="pkM2" alt="" />
+          <img src={PKB} className='pokeball_msg' id="pkM3" alt="" />
+          <img src={PKB} className='pokeball_msg' id="pkM4" alt="" />
+          <img src={PKB} className='pokeball_msg' id="pkM5" alt="" />
+          <img src={PKB} className='pokeball_msg' id="pkM6" alt="" />
           <h2 className='messageText'>{message}</h2>
-          <div className='pokeball_message' id="pk4"></div>
+          {/* <div className='pokeball_message' id="pk4"></div>
           <div className='pokeball_message' id="pk5"></div>
-          <div className='pokeball_message' id="pk6"></div>
+          <div className='pokeball_message' id="pk6"></div> */}
           
         </div>
       </div>  

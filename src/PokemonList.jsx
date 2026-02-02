@@ -1,5 +1,7 @@
 import React from "react"
 import { useState } from "react"
+import { Link } from 'react-router-dom';
+
 const typeIcons = {
   Feu: require('./assets/Feu.png'),
   Eau: require('./assets/Eau.png'),
@@ -19,7 +21,7 @@ const typeIcons = {
 
 };
 
-const PokemonList =({id,nom,type,image,icone,statsAtk,statsDef, isFav, onFavClick, nbfav,showPkball})=>{
+const PokemonList =({id,nom,type,image,icone,statsAtk,statsDef,currentId, isFav, onFavClick, nbfav,showPkball})=>{
  
  
  
@@ -30,7 +32,10 @@ const PokemonList =({id,nom,type,image,icone,statsAtk,statsDef, isFav, onFavClic
             <p className="nomPkmn">{nom}</p>
             <img className="icone" src={typeIcons[icone]} alt={icone} />
             <div className="imageContainer">
-                <img src={image} className="imagePkmn" alt="" />
+                <Link to={`/pokemon/${currentId}`} className="imageContainer">
+                 <img src={image} className="imagePkmn" alt="" />
+                </Link>
+               
                 <p className="atk">Atk. :<span>{statsAtk}</span></p>
                 <p className="def">Déf. :<span>{statsDef}</span></p>
                 {isFav && showPkball
