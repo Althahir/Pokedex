@@ -1,5 +1,5 @@
 
-import './App3.css';
+import './App.css';
 import './Detail.css';
 import pkmnList from "./pokedex.json"
 import PokemonList from './PokemonList';
@@ -43,7 +43,7 @@ const PokemonCardEmpty = () => (
   <div className="cardPkmn empty">
     {/* <div className="silhouette">?</div> */}
     <img src={PKB} className='equipe-vide' alt="" />
-    <h2 className='emptyText'>?</h2>
+    <h2 className='emptyText'></h2>
     {/* <p>Emplacement vide</p> */}
   </div>
 );

@@ -6,9 +6,25 @@
   const [pkmnFound,setPkmnFound]=useState(null)
   const { id } = useParams(); // On met des ACCOLADES autour de id
 //   const {DetailId} = 6
+const typeIcons = {
+  Feu: require('./assets/Feu.png'),
+  Eau: require('./assets/Eau.png'),
+  Plante: require('./assets/Plante.png'),
+  Electrik: require('./assets/Electrik.png'),
+  Psy: require('./assets/Psy.png'),
+  Combat: require('./assets/Combat.png'),
+  Vol: require('./assets/Vol.png'),
+  Fée: require('./assets/Fée.png'),
+  Normal: require('./assets/Normal.png'),
+  Dragon: require('./assets/Dragon.png'),
+  Insecte: require('./assets/Insecte.png'),
+  Poison: require('./assets/Poison.png'),
+  Roche: require('./assets/Roche.png'),
+  Sol: require('./assets/Sol.png'),
+  Spectre: require('./assets/Spectre.png'),
 
+};
   useEffect(()=>{
-    console.log("J'essaie de chercher le Pokémon numéro :", id); // Regarde ce chiffre !
 
 //   fetch(`https://tyradex.app/api/v1/pokemon/6`)
   fetch(`https://tyradex.app/api/v1/pokemon/${id}`)
@@ -22,11 +38,11 @@ const officialArtwork = `https://raw.githubusercontent.com/PokeAPI/sprites/maste
 
 
       return(
-      <div className="containerDetail">
+      <div className="containerDetail ">
         <Link to="/">Retour</Link>
-        <h1 className="nom">{pkmnFound.name?.fr}</h1>
+        <h1 className={`nom nom${pkmnFound.types[0].name}`}>{pkmnFound.name?.fr}</h1>
         {/* <div className="containerImage"> */}
-          <p className="type">Type : {pkmnFound.types[0].name} {pkmnFound.types[1] ? ` / ${pkmnFound.types[1].name}` : null}</p>
+          <p className={`typeDetail type${pkmnFound.types[0].name}`}>Type : {pkmnFound.types[0].name} {pkmnFound.types[1] ? ` / ${pkmnFound.types[1].name}` : null}</p>
           <table className="tableStat">
           <th>Stats :</th>
           <tr>
@@ -94,6 +110,8 @@ const officialArtwork = `https://raw.githubusercontent.com/PokeAPI/sprites/maste
             <td>{pkmnFound.resistances[8].name}</td>
             <td>{pkmnFound.resistances[8].multiplier}</td>
           </tr>
+          </table>
+          <table className="tableType2">
           <tr>
             <td>{pkmnFound.resistances[9].name}</td>
             <td>{pkmnFound.resistances[9].multiplier}</td>

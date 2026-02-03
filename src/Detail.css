@@ -50,35 +50,226 @@
     width: 100%;
     height: 100vh;
     overflow: hidden;
-    background-color: rebeccapurple;
+    color: grey;
+    /* background-color: rebeccapurple; */
 
 }
+
 .pokemon-image{
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: red;
+    transform: translate(-50%, -30%);
+    /* background-color: red; */
     width: 40%;
+
 }
-.nom{
+/* À mettre TOUT en haut de ton fichier CSS */
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap');
+
+.nom {
     position: absolute;
-    top: 0;
+    top: 20px; /* Ajusté pour pas qu'il colle trop au bord */
     left: 50%;
     transform: translateX(-50%);
+    font-family: 'Comfortaa', cursive;
+    font-size: 4em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    
+    
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent; /* Force le texte à prendre le dégradé */
+    
+    text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.2),
+        -1px -1px 0px rgba(255, 255, 255, 0.5);
+    
+    backdrop-filter: blur(2px);
+    z-index: 5;
+    
 }
-/* .typeDetail{
+.nomFée, .typeFée {
+    /* ... ton style précédent ... */
+    background: linear-gradient(0deg, pink 0%, rgb(243, 150, 165) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent; /* Pour que le orange remplace la couleur du texte */
+}
+/* --- Variantes par Type --- */
+
+.nomFeu, .typeFeu {
+    background: linear-gradient(0deg, #ff8c00 0%, #ff4500 100%);
+       -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nomEau, .typeEau {
+    background: linear-gradient(0deg, #00bfff 0%, #1e90ff 100%);
+       -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nomPlante, .typePlante {
+    background: linear-gradient(0deg, #32cd32 0%, #228b22 100%);
+       -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nomÉlectrik, .typeÉlectrik {
+    background: linear-gradient(0deg, #ffd700 0%, #ffae00 100%);
+       -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nomGlace, .typeGlace {
+    background: linear-gradient(0deg, #afeeee 0%, #00ced1 100%);
+       -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nomCombat, .typeCombat {
+    background: linear-gradient(0deg, #ff4d4d 0%, #b22222 100%);
+       -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nomPoison, .typePoison {
+    background: linear-gradient(0deg, #da70d6 0%, #8b008b 100%);
+       -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nomSol, .typeSol {
+    background: linear-gradient(0deg, #deb887 0%, #8b4513 100%);
+       -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nomVol, .typeVol {
+    background: linear-gradient(0deg, #87ceeb 0%, #4682b4 100%);
+       -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nomPsy, .typePsy {
+    background: linear-gradient(0deg, #ff69b4 0%, #ff1493 100%);
+       -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nomInsecte, .typeInsecte {
+    background: linear-gradient(0deg, #adff2f 0%, #6b8e23 100%);
+       -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nomRoche, .typeRoche {
+    background: linear-gradient(0deg, #d2b48c 0%, #708090 100%);
+       -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nomSpectre, .typeSpectre {
+    background: linear-gradient(0deg, #9370db 0%, #483d8b 100%);
+       -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nomDragon, .typeDragon {
+    background: linear-gradient(0deg, #7b68ee 0%, #4b0082 100%);
+       -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nomNormal, .typeNormal {
+    background: linear-gradient(0deg, #dcdcdc 0%, #696969 100%);
+       -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.typeDetail{
     position: absolute;
-    top: 20px;
-    left: 50px;
-} */
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3em;
+    z-index: 5;
+    backdrop-filter: blur(20px);
+}
 .tableStat{
     position: absolute;
     top: 100px;
     left: 50px;
+    font-size: 2em;
+    width: 350px;
 }
 .tableType{
     position: absolute;
-    top: 200px;
+    top: 450px;
     left: 50px;
+    font-size: 1.5em;
 }
+.tableType2{
+    position: absolute;
+    top: 480px;
+    left: 270px;
+    font-size: 1.5em;
+}
+.colNomType, .colNomStat{
+    /* display: flex; */
+    justify-content: right;
+    text-align: center;
+    /* align-items: center; */
+}
+.colNomType1{
+    color: #3498db;
+}
+.colNomType{
+    color: #2ecc71;
+}
+.colNomType1{
+    color: #95a5a6;
+}
+.colNomType4{
+    color: #ff4d4d;
+}
+.colDataType, .colDataStat{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.badge-res {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: bold;
+  color: black;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.critique { background: #ff4d4d; } /* Rouge : Faiblesse */
+.neutre   { background: #95a5a6; } /* Gris : Normal */
+.resistant { background: #2ecc71; } /* Vert : Résistant */
+.immunise  { background: #3498db; } /* Bleu : Immunisé */
