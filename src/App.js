@@ -4,6 +4,7 @@ import pkmnList from "./pokedex.json"
 import PokemonList from './PokemonList';
 import logo from  './logo.png'
 import { useEffect, useState } from 'react';
+import PKB from './pokeball.png'
 
 
 function App() {
@@ -38,8 +39,10 @@ useEffect(() => {
   }
 const PokemonCardEmpty = () => (
   <div className="cardPkmn empty">
-    <div className="silhouette">?</div>
-    <p>Emplacement vide</p>
+    {/* <div className="silhouette">?</div> */}
+    <img src={PKB} className='equipe-vide' alt="" />
+    <h2 className='emptyText'></h2>
+    {/* <p>Emplacement vide</p> */}
   </div>
 );
 
