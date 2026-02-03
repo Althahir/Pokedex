@@ -128,16 +128,22 @@ return (
       <div className={message.includes("Equipe") ? "messageAreaShow" : "messageAreaHidden"}>
       {/* <div className="messageAreaShow" > */}
         <div className='messageShow'>
-          <div className='pokeball_message' id="pk1"></div>
+          {/* <div className='pokeball_message' id="pk1"></div>
           <div className='pokeball_message' id="pk2"></div>
-          <div className='pokeball_message' id="pk3"></div>
+          <div className='pokeball_message' id="pk3"></div> */}
+          <img src={PKB} className='pokeball_msg' id="pkM1" alt="" />
+          <img src={PKB} className='pokeball_msg' id="pkM2" alt="" />
+          <img src={PKB} className='pokeball_msg' id="pkM3" alt="" />
+          <img src={PKB} className='pokeball_msg' id="pkM4" alt="" />
+          <img src={PKB} className='pokeball_msg' id="pkM5" alt="" />
+          <img src={PKB} className='pokeball_msg' id="pkM6" alt="" />
           <h2 className='messageText'>{message}</h2>
-          <div className='pokeball_message' id="pk4"></div>
+          {/* <div className='pokeball_message' id="pk4"></div>
           <div className='pokeball_message' id="pk5"></div>
-          <div className='pokeball_message' id="pk6"></div>
+          <div className='pokeball_message' id="pk6"></div> */}
           
         </div>
-      </div>  
+      </div>    
       <div className='body'>
 
            
