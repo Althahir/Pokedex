@@ -1,10 +1,10 @@
 
-import './App3.css';
+import './App.css';
 import pkmnList from "./pokedex.json"
 import PokemonList from './PokemonList';
-import logo from  './logo.png'
+import logo from  './assets/logo.png'
 import { useEffect, useState } from 'react';
-import PKB from './pokeball.png'
+import PKB from './assets/pokeball.png'
 
 
 function App() {
