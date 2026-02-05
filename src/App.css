@@ -3,13 +3,12 @@
   src: url('./fonts/Pokemon Solid.ttf') format('truetype');
 }
 
-/* --- Base & Background --- */
 body {
   margin: 0;
   background: radial-gradient(circle at center, #486786 0%, #0a0a0a 100%);
   color: white;
   min-height: 100vh;
-    font-family: 'Poppins', sans-serif; /* Style moderne sans-serif */
+    font-family: 'Poppins', sans-serif; 
 
 }
 
@@ -35,7 +34,7 @@ body {
   filter: drop-shadow(0 0 15px rgba(255, 203, 15, 2));
 }
 
-/* --- Barre de Recherche (Moderne) --- */
+/* -------- RECHERCHE ------ */
 .search {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
@@ -56,7 +55,7 @@ body {
   border: 1px solid rgba(59, 76, 202, 0.5);
   border-radius: 12px;
   color: #ffcb05;
-  font-family: 'Inter', sans-serif; /* Plus moderne pour l'input */
+  font-family: 'Inter', sans-serif; 
   font-size: 2em;
   padding: 12px 25px;
   outline: none;
@@ -78,10 +77,9 @@ body {
   text-align: center;
   overflow: hidden;
   font-size: 2em;
-  color: grey; /* Le jaune officiel */
+  color: grey; 
   /* background-color: white; */
   padding: 10px;
-
   /* filter: drop-shadow(4px 4px 0px #3b4cca); */
   transition: all ease-in-out 0.2s;
   margin-left: 50px;
@@ -98,8 +96,10 @@ body {
   align-items: center;
   text-align: center;
   overflow: hidden;
+    z-index: 101;
+
   font-size: 2em;
-  color: rgb(22, 22, 22); /* Le jaune officiel */
+  color: rgb(22, 22, 22); 
   /* background-color: white; */
   padding: 10px;
   background-color: rgba(255, 255, 255, 0.5);
@@ -108,11 +108,14 @@ body {
   transition: all ease-in-out 0.2s;
   /* margin-left:50px; */
 }
+.reinitEquipe:hover{
+  transform: scale(1.02);
+}
 .deleteSearch:hover{
   transform: scale(1.02);
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.367);
 }
-/* -----------------------Equipe -------------------------------- */
+/* -----------------------FAVORIS (Equipe) -------------------------------- */
   
 .equipe{
   position: sticky;
@@ -121,7 +124,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  top: 0;           /* Se colle au bord haut du navigateur */
+  top: 0;           
   z-index: 100;
   backdrop-filter: blur(5px);
   width: 100%;
@@ -139,15 +142,34 @@ body {
   visibility: hidden;
   border: none;
   background-color: transparent;
-  z-index: -10;
+  z-index: 10;
     overflow: visible;
       transition: all ease-in-out 0.2s;
-      pointer-events: none; /* Désactive le clic */
-    cursor: default;      /* Remet le curseur normal au lieu de la main */
-    text-decoration: none;/* Optionnel : enlève le soulignement */
+      /* pointer-events: none; Désactive le clic */
+    cursor: default;     
+    text-decoration: none;
     color: inherit;
 
 
+}
+.equipe-container .cardPkmn:hover{
+  transform: none;
+}
+.equipe-container .cardPkmn .supprFav{
+  visibility: visible;
+  height: 20px;
+  border-radius: 50%;
+  border: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+    z-index: 100;
+    background-color: rgba(128, 128, 128, 0.397);
+
+}
+.equipe-container .cardPkmn .supprFav:hover{
+  transform: scale(1.2);
+  background-color: grey;
 }
 .equipe-container .cardPkmn:hover{
 box-shadow: none;
@@ -173,15 +195,7 @@ box-shadow: none;
 .equipe-container .cardPkmn .icone, .equipe-container .cardPkmn .idPkmn,.equipe-container .cardPkmn .atk, .equipe-container .cardPkmn .def{
  visibility: hidden;
 }
-.pokeball_message{
-  font-size: 15em;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color:  gray ;
-  
-}
+
 .pokeball_msg{
   position: absolute;
   z-index: 200;
@@ -196,32 +210,32 @@ box-shadow: none;
     top: 80px;
   left: 60px;
   width: 340px;
-  transform: rotate(40deg); /* Ajoute 'deg' ici */
+  transform: rotate(40deg); 
 }
 #pkM3{
     top: -220px;
   right: 50px;
   width: 240px;
-  transform: rotate(70deg); /* Ajoute 'deg' ici */
+  transform: rotate(70deg); 
 }
 #pkM4{
     top: -150px;
   left:  50%;
   width: 200px;
   transform: translate(-50% -50%);
-  transform: rotate(350deg); /* Ajoute 'deg' ici */
+  transform: rotate(350deg); 
 }
 #pkM5{
     top: 120px;
   right: 350px;
   width: 250px;
-  transform: rotate(-40deg); /* Ajoute 'deg' ici */
+  transform: rotate(-40deg); 
 }
 #pkM6{
     top: 50px;
   right: -90px;
   width: 150px;
-  transform: rotate(50deg); /* Ajoute 'deg' ici */
+  transform: rotate(50deg); 
 }
 #pkEquipe1{
   top: 350px;
@@ -295,7 +309,6 @@ box-shadow: none;
 
 
 /* ---------------------------------cartes------------------------------------ */
-/* --- Cartes Pokémon (Glassmorphism) --- */
 /* .body {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -329,10 +342,13 @@ box-shadow: none;
   overflow: hidden;
   position: relative;
 }
+.supprFav{
+  visibility: hidden;
+}
 
 .cardPkmn:hover {
   transform: translateY(-10px) scale(1.05);
-  border-color: gray; /* Bordure jaune au survol */
+  border-color: gray; 
   box-shadow: 0 0 35px #ffcd058a;
 }
 .imageContainer{
@@ -359,7 +375,7 @@ box-shadow: none;
   height: 150px;
   /* margin-top: 15px; */
   margin: 0;
-  /* background-color: rgba(255, 255, 255, 0.5); Plus doux que le blanc pur */
+  /* background-color: rgba(255, 255, 255, 0.5); 
   border-radius: 15px;
   padding: 10px;
   /* background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); */
@@ -425,7 +441,7 @@ background: linear-gradient(180deg, #f00000 48%, #222224 49%, #222224 50%, #f0f0
   font-size: 1em;
   /* letter-spacing: 2px; */
   color: black;
-    font-family: 'Poppins', sans-serif; /* Style moderne sans-serif */
+    font-family: 'Poppins', sans-serif; 
     width: 100%;
     font-weight:200;
     padding-bottom: 20px;
@@ -456,7 +472,7 @@ background: linear-gradient(180deg, #f00000 48%, #222224 49%, #222224 50%, #f0f0
 }
 
 .idPkmn{
-  font-family: 'Poppins', sans-serif; /* Style moderne sans-serif */
+  font-family: 'Poppins', sans-serif; 
   font-size: 0.5em;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -468,7 +484,7 @@ background: linear-gradient(180deg, #f00000 48%, #222224 49%, #222224 50%, #f0f0
   padding: 0;
 }
 .nomPkmn{
-  font-family: 'Poppins', sans-serif; /* Style moderne sans-serif */
+  font-family: 'Poppins', sans-serif; 
   font-size: 1em;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -483,7 +499,6 @@ background: linear-gradient(180deg, #f00000 48%, #222224 49%, #222224 50%, #f0f0
   transform: scale(1.1);
 }
 
-/* --- Boutons (Style Premium) --- */
 .btnPkmn{
   margin-top: 20px;
   display: flex;
@@ -535,20 +550,16 @@ border: none;
 }
 
 .Plante{
-  /* background-color: green; */
   background: linear-gradient(90deg, transparent 0%, green 50%, transparent 100%);
   color: rgb(1, 56, 1);
   border-top: 2px solid rgb(1,56,1);
   border-bottom: 2px solid rgb(1,56,1);
 }
 .cardPlante{
-  /* .equipe-container .cardPlante  */
   background-image: url("./assets/fondPlante.png"); 
-  background-size: cover;      /* L'image remplit toute la carte */
-  background-position: center; /* L'image est centrée */
+  background-size: cover;     
+  background-position: center;
   background-repeat: no-repeat;
-  
-  /* Optionnel : ajouter un léger voile sombre pour que le texte reste lisible */
   background-blend-mode: overlay;
   background-color: rgba(0, 0, 0, 0.2); 
  
@@ -561,13 +572,10 @@ border: none;
 
 }
 .cardEau, .equipe-container .cardEau {
-  /* Pas de "src=", juste url() */
   background-image: url("./assets/fondEau.png"); 
-    background-size: cover;      /* L'image remplit toute la carte */
-  background-position: center; /* L'image est centrée */
+    background-size: cover;     
+  background-position: center; 
   background-repeat: no-repeat;
-  
-  /* Optionnel : ajouter un léger voile sombre pour que le texte reste lisible */
   background-blend-mode: overlay;
   background-color: rgba(0, 0, 0, 0.2); 
  
@@ -580,13 +588,13 @@ border: none;
 
 }
  .cardFeu, .equipe-container .cardFeu{
-  /* Pas de "src=", juste url() */
+  
   background-image: url("./assets/fondFeu.png"); 
-  background-size: cover;      /* L'image remplit toute la carte */
-  background-position: center; /* L'image est centrée */
+  background-size: cover;      
+  background-position: center; 
   background-repeat: no-repeat;
   
-  /* Optionnel : ajouter un léger voile sombre pour que le texte reste lisible */
+  
   background-blend-mode: overlay;
   background-color: rgba(0, 0, 0, 0.2); 
 }
@@ -597,13 +605,13 @@ border: none;
     border-bottom: 2px solid green;
 }
 .cardInsecte , .equipe-container .cardInsecte{
-  /* Pas de "src=", juste url() */
+  
   background-image: url("./assets/fondInsecte.png"); 
-    background-size: cover;      /* L'image remplit toute la carte */
-  background-position: center; /* L'image est centrée */
+    background-size: cover;    
+  background-position: center; 
   background-repeat: no-repeat;
   
-  /* Optionnel : ajouter un léger voile sombre pour que le texte reste lisible */
+  
   background-blend-mode: overlay;
   background-color: rgba(0, 0, 0, 0.2); 
  
@@ -616,13 +624,13 @@ border: none;
     border-bottom: 2px solid  rgb(63, 63, 63);
 }
 .cardNormal , .equipe-container .cardNormal{
-  /* Pas de "src=", juste url() */
+  
   background-image: url("./assets/fondNormal.png"); 
-    background-size: cover;      /* L'image remplit toute la carte */
-  background-position: center; /* L'image est centrée */
+    background-size: cover;    
+  background-position: center; 
   background-repeat: no-repeat;
   
-  /* Optionnel : ajouter un léger voile sombre pour que le texte reste lisible */
+  
   background-blend-mode: overlay;
   background-color: rgba(0, 0, 0, 0.2); 
  
@@ -634,13 +642,13 @@ border: none;
     border-bottom: 2px solid purple;
 }
 .cardPoison, .equipe-container .cardPoison {
-  /* Pas de "src=", juste url() */
+  
   background-image: url("./assets/fondPoison.png"); 
-    background-size: cover;      /* L'image remplit toute la carte */
-  background-position: center; /* L'image est centrée */
+    background-size: cover;    
+  background-position: center; 
   background-repeat: no-repeat;
   
-  /* Optionnel : ajouter un léger voile sombre pour que le texte reste lisible */
+  
   background-blend-mode: overlay;
   background-color: rgba(0, 0, 0, 0.2); 
  
@@ -653,13 +661,13 @@ border: none;
     border-bottom: 2px solid orange;
 }
 .cardElectrik , .equipe-container .cardElectrik{
-  /* Pas de "src=", juste url() */
+  
   background-image: url("./assets/fondFoudre.png"); 
-   background-size: cover;      /* L'image remplit toute la carte */
-  background-position: center; /* L'image est centrée */
+   background-size: cover;     
+  background-position: center; 
   background-repeat: no-repeat;
   
-  /* Optionnel : ajouter un léger voile sombre pour que le texte reste lisible */
+  
   background-blend-mode: overlay;
   background-color: rgba(0, 0, 0, 0.2);  
  
@@ -672,13 +680,13 @@ border: none;
 
 }
 .cardSol , .equipe-container .cardSol{
-  /* Pas de "src=", juste url() */
+  
   background-image: url("./assets/fondSol.png"); 
-    background-size: cover;      /* L'image remplit toute la carte */
-  background-position: center; /* L'image est centrée */
+    background-size: cover;    
+  background-position: center; 
   background-repeat: no-repeat;
   
-  /* Optionnel : ajouter un léger voile sombre pour que le texte reste lisible */
+  
   background-blend-mode: overlay;
   background-color: rgba(0, 0, 0, 0.2); 
  
@@ -690,13 +698,13 @@ border: none;
     border-bottom: 2px solid rgb(230, 91, 114);
 }
 .cardFée , .equipe-container .cardFée{
-  /* Pas de "src=", juste url() */
+  
   background-image: url("./assets/fondFee.png"); 
-    background-size: cover;      /* L'image remplit toute la carte */
-  background-position: center; /* L'image est centrée */
+    background-size: cover;    
+  background-position: center; 
   background-repeat: no-repeat;
   
-  /* Optionnel : ajouter un léger voile sombre pour que le texte reste lisible */
+  
   background-blend-mode: overlay;
   background-color: rgba(0, 0, 0, 0.2); 
  
@@ -708,13 +716,13 @@ border: none;
     border-bottom: 2px solid rgb(230, 91, 114);
 }
 .cardCombat , .equipe-container .cardCombat{
-  /* Pas de "src=", juste url() */
+  
   background-image: url("./assets/fondCombat.png"); 
-    background-size: cover;      /* L'image remplit toute la carte */
-  background-position: center; /* L'image est centrée */
+    background-size: cover;    
+  background-position: center; 
   background-repeat: no-repeat;
   
-  /* Optionnel : ajouter un léger voile sombre pour que le texte reste lisible */
+  
   background-blend-mode: overlay;
   background-color: rgba(0, 0, 0, 0.2); 
  
@@ -726,13 +734,13 @@ border: none;
     border-bottom: 2px solid pink;
 }
 .cardPsy , .equipe-container .cardPsy{
-  /* Pas de "src=", juste url() */
+  
   background-image: url("./assets/fondPsy.png"); 
-    background-size: cover;      /* L'image remplit toute la carte */
-  background-position: center; /* L'image est centrée */
+    background-size: cover;    
+  background-position: center; 
   background-repeat: no-repeat;
   
-  /* Optionnel : ajouter un léger voile sombre pour que le texte reste lisible */
+  
   background-blend-mode: overlay;
   background-color: rgba(0, 0, 0, 0.2); 
  
@@ -744,13 +752,13 @@ border: none;
     border-bottom: 2px solid rgb(167, 165, 165);
 }
 .cardRoche , .equipe-container .cardRoche{
-  /* Pas de "src=", juste url() */
+  
   background-image: url("./assets/fondRoche.png"); 
-    background-size: cover;      /* L'image remplit toute la carte */
-  background-position: center; /* L'image est centrée */
+    background-size: cover;    
+  background-position: center; 
   background-repeat: no-repeat;
   
-  /* Optionnel : ajouter un léger voile sombre pour que le texte reste lisible */
+  
   background-blend-mode: overlay;
   background-color: rgba(0, 0, 0, 0.2); 
  
@@ -763,13 +771,13 @@ border: none;
 
 }
 .cardSpectre , .equipe-container .cardSpectre{
-  /* Pas de "src=", juste url() */
+  
   background-image: url("./assets/fondSpectre.png"); 
-    background-size: cover;      /* L'image remplit toute la carte */
-  background-position: center; /* L'image est centrée */
+    background-size: cover;    
+  background-position: center; 
   background-repeat: no-repeat;
   
-  /* Optionnel : ajouter un léger voile sombre pour que le texte reste lisible */
+  
   background-blend-mode: overlay;
   background-color: rgba(0, 0, 0, 0.2); 
  
@@ -781,13 +789,13 @@ border: none;
     border-bottom: 2px solid cadetblue;
 }
 .cardDragon , .equipe-container .cardDragon{
-  /* Pas de "src=", juste url() */
+  
   background-image: url("./assets/fondDragon.png"); 
-    background-size: cover;      /* L'image remplit toute la carte */
-  background-position: center; /* L'image est centrée */
+    background-size: cover;    
+  background-position: center; 
   background-repeat: no-repeat;
   
-  /* Optionnel : ajouter un léger voile sombre pour que le texte reste lisible */
+  
   background-blend-mode: overlay;
   background-color: rgba(0, 0, 0, 0.2); 
  
@@ -801,18 +809,17 @@ border: none;
     border-bottom: 2px solid cadetblue;
 }
 .cardGlace , .equipe-container .cardGlace{
-  /* Pas de "src=", juste url() */
+  
   background-image: url("./assets/fondGlace.png"); 
-    background-size: cover;      /* L'image remplit toute la carte */
-  background-position: center; /* L'image est centrée */
+    background-size: cover;    
+  background-position: center; 
   background-repeat: no-repeat;
   
-  /* Optionnel : ajouter un léger voile sombre pour que le texte reste lisible */
+  
   background-blend-mode: overlay;
   background-color: rgba(0, 0, 0, 0.2); 
  
 }
-/* --- Modale Message (Style Alerte futuriste) --- */
 .messageAreaShow{
   position: fixed;
   top: 50%;
@@ -966,37 +973,3 @@ border: none;
   border: calc(var(--size)*0.1) solid #222224;
 }
 
-
-/* .messageShow {
-  position: fixed;
-  top: 50px;
-  left: 0;
-  height: 150px;
-  width: 100%;
-  z-index: 1000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: 'PokemonVideoGame', sans-serif;
-  color: #ffcb05;
-  -webkit-text-stroke: 2px #3b4cca;
-  font-size: 3.5em;
-  letter-spacing: 4px;
-  background: linear-gradient(180deg, #f00000 48%, #222224 49%, #222224 50%, #f0f0f0 51%);
-  border: 5px solid #222224;
-  text-align: center;
-} 
-
-.messageShow::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 30px;  
-  height: 30px;
-  background: white;
-  border: 6px solid #222224; 
-  border-radius: 50%;
-  z-index: -1; 
-}*/

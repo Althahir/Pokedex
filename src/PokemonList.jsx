@@ -19,7 +19,7 @@ const typeIcons = {
   // ... ajoute tous tes types
 };
 
-const PokemonList =({id,nom,type,image,icone,statsAtk,statsDef, isFav, onFavClick, nbfav,showPkball})=>{
+const PokemonList =({id,nom,type,image,icone,statsAtk,statsDef, isFav, onFavClick, nbfav,showPkball, supprFav})=>{
  
  
  
@@ -52,8 +52,10 @@ const PokemonList =({id,nom,type,image,icone,statsAtk,statsDef, isFav, onFavClic
                          <p className="ajoutEquipe">Mettre dans l'équipe ?</p>
                          )}
                     </button>
+                    
                 :   null
                 }
+                <button onClick={()=>supprFav(id)} className="supprFav">X</button>
             
             {/* <button className="btnPkmn" onClick={() => onFavClick(id)}>
                 {isFav 

@@ -17,9 +17,8 @@ function App() {
   
 
 useEffect(() => {
-  // Dès que listFav change, on sauvegarde automatiquement
   localStorage.setItem("PkmnFav", JSON.stringify(listFav));
-}, [listFav]); // On surveille listFav
+}, [listFav]);
 
   const favPokemon=(id)=>{
     if (listFav.includes(id)){
@@ -39,10 +38,8 @@ useEffect(() => {
   }
 const PokemonCardEmpty = () => (
   <div className="cardPkmn empty">
-    {/* <div className="silhouette">?</div> */}
     <img src={PKB} className='equipe-vide' alt="" />
     <h2 className='emptyText'></h2>
-    {/* <p>Emplacement vide</p> */}
   </div>
 );
 
@@ -76,6 +73,10 @@ const pkmnNew=pkmnList
 
     )
   })
+  const supprFav=(id)=>{
+    const nvFab = listFav.filter(favId=> favId !== id)   
+      setListFav(nvFab)
+  }
  
 const afficherFav = () => {
   const equipeVide = [];
@@ -85,7 +86,7 @@ const afficherFav = () => {
       // S'il y a un favori à cet index, on cherche ses infos
       const pk = pkmnList.find(p => p.id === listFav[i]);
       equipeVide.push(
-        <PokemonList 
+        <PokemonList
           key={pk.id} 
           id={pk.id} 
           nom={pk.nom} 
@@ -96,7 +97,9 @@ const afficherFav = () => {
           image={pk.image}
           isFav={true} 
           onFavClick={favPokemon} 
+          supprFav={favPokemon}
           showPkball={false}
+
         />
       );
     } else {
@@ -106,6 +109,10 @@ const afficherFav = () => {
 
   return equipeVide;
 };
+ const defavPkmn=(i)=>{
+  return i
+ }
+
 return (
     <div className="App">
       <img className="logo" src={logo}></img>
