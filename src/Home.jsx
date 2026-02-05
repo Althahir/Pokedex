@@ -47,6 +47,10 @@ const PokemonCardEmpty = () => (
     {/* <p>Emplacement vide</p> */}
   </div>
 );
+const supprFav=(id)=>{
+  const nvFab = listFav.filter(favId=> favId !== id)   
+      setListFav(nvFab)
+}
 
 const reinitEquipe=()=>{
   setListFav([])
@@ -76,6 +80,7 @@ return (
       onFavClick={favPokemon} 
        type={el.type} 
       nbfav={listFav}
+      onDeleteClick={supprFav}
       showPkball={true}
       statsAtk={el.stats.atk}
       statsDef={el.stats.def}/>
@@ -92,17 +97,18 @@ const afficherFav = () => {
       const pk = pkmnList.find(p => p.id === listFav[i]);
       equipeVide.push(
         <PokemonList 
-          // key={pk.id} 
-          // id={pk.id} 
+          key={pk.id} 
+          id={pk.id} 
           // nom={pk.nom} 
           // statsAtk={pk.stats.atk}
           // statsDef={pk.stats.def}
           // icone={pk.type}
           // type={pk.type} 
           image={pk.image}
-          // isFav={true} 
+          isFav={true} 
           // onFavClick={favPokemon} 
-          // showPkball={false}
+          showPkball={false}
+          onDeleteClick={supprFav}
         />
       );
     } else {

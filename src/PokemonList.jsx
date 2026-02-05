@@ -21,7 +21,7 @@ const typeIcons = {
 
 };
 
-const PokemonList =({id,nom,type,image,icone,statsAtk,statsDef,currentId, isFav, onFavClick, nbfav,showPkball})=>{
+const PokemonList =({id,nom,type,image,icone,statsAtk,statsDef,currentId, isFav, onFavClick, nbfav,showPkball, onDeleteClick, supprFav})=>{
  
  
  
@@ -59,6 +59,7 @@ const PokemonList =({id,nom,type,image,icone,statsAtk,statsDef,currentId, isFav,
                     </button>
                 :   null
                 }
+                <button className="deleteFav" onClick={()=>onDeleteClick(id)}>X</button>
             
             {/* <button className="btnPkmn" onClick={() => onFavClick(id)}>
                 {isFav 
