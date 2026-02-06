@@ -54,6 +54,61 @@
     /* background-color: rebeccapurple; */
 
 }
+.return{
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    width: 100px;
+    text-align: center;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3em;
+    color: black;
+    background-color: rgba(128, 128, 128, 0.377);
+    border-radius: 8px;
+    border: none;
+}
+.return:hover, .validerVisible:hover{
+    background-color: grey;
+    transform: scale(1.1);
+}
+.validerInvisible{
+pointer-events: none;
+   position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 100px;
+    text-align: center;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3em;
+    color: rgba(128, 128, 128, 0.527);
+    background-color: rgba(128, 128, 128, 0.082);
+    border-radius: 8px;
+    border: none;
+
+}
+.validerVisible{
+pointer-events: auto;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 100px;
+    text-align: center;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3em;
+    color: black;
+    background-color: rgba(128, 128, 128, 0.377);
+    border-radius: 8px;
+    border: none;
+}
 
 .pokemon-image{
     position: absolute;
@@ -63,6 +118,40 @@
     /* background-color: red; */
     width: 40%;
 
+}
+.imgShiny, .imgShiny2{
+    /* background-color: red; */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+   
+    border: 5px solid rgba(128, 128, 128, 0.356);
+    border-radius: 20px;
+}
+.imgShiny{
+     right: 50px;
+    top: 10px;
+}
+.imgShiny2{
+     right: 50px;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.imgShiny img, .imgShiny2 img{
+    width: 350px;
+}
+.titreShiny{
+    /* color: red; */
+    color: rgba(128, 128, 128, 0.486);
+    margin: 0;
 }
 /* À mettre TOUT en haut de ton fichier CSS */
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap');
@@ -223,13 +312,13 @@
 }
 .tableType{
     position: absolute;
-    top: 450px;
+    bottom: 50px;
     left: 50px;
     font-size: 1.5em;
 }
 .tableType2{
     position: absolute;
-    top: 480px;
+    bottom: 50px;
     left: 270px;
     font-size: 1.5em;
 }
@@ -239,22 +328,35 @@
     text-align: center;
     /* align-items: center; */
 }
-.colNomType1{
-    color: #3498db;
-}
-.colNomType{
-    color: #2ecc71;
-}
-.colNomType1{
-    color: #95a5a6;
-}
-.colNomType4{
-    color: #ff4d4d;
-}
-.colDataType, .colDataStat{
+.data{
+    font-size: 0.8em;
+    /* background-color: red; */
+    /* width: min-content; */
+    width: 25px;
+    height: 25px;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    border-radius: 50%;
+    
+}
+.data0{
+    /* background-color: blue; */
+    color: green;
+}
+.data1{
+    color: orange;
+    /* background-color: orange; */
+}
+.data2{
+    color: red;
+    /* background-color: red; */
+}
+
+.data4{
+    color: rgb(90, 2, 2);
+    background-color: rgba(255, 0, 0, 0.418);
 }
 .badge-res {
   width: 30px;
@@ -269,7 +371,65 @@
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-.critique { background: #ff4d4d; } /* Rouge : Faiblesse */
-.neutre   { background: #95a5a6; } /* Gris : Normal */
-.resistant { background: #2ecc71; } /* Vert : Résistant */
-.immunise  { background: #3498db; } /* Bleu : Immunisé */
+/* ---------------RING------------------- */
+.ring{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+.ringAreaLeft{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50vw;
+    height: 100vh;
+    /* background-color: rgb(238, 168, 168); */
+}
+.ringAreaRight{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50vw;
+    height: 100vh;
+    /* background-color: rgb(238, 168, 168); */
+}
+.centerRing{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 2;
+    width: 400px;
+    /* background-color: red; */
+    height: 400px;
+    border-radius: 50%;
+background: linear-gradient(180deg, #f00000 48%, #222224 49%, #222224 50%, #f0f0f0 51%);    border: 9px solid black;
+  border: solid #222224 8px;
+}
+.centerRing2{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 3;
+    width: 120px;
+    /* background-color: red; */
+    height: 120px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    border: 6px solid #222224;
+
+}
+.centerRingCenter{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 3;
+    width: 60px;
+    /* background-color: red; */
+    height: 60px;
+    border-radius: 50%;
+    background-color: #68686d56;
+    border: 6px solid #22222456;
+}

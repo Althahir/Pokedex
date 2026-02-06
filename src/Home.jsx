@@ -7,7 +7,7 @@ import logo from  './logo.png'
 import { useEffect, useState } from 'react';
 import PokemonDetails from './PokemonDetails';
 import PKB from './pokeball.png'
-
+import { Link } from 'react-router-dom';
 
 function Home() {
   const [recherche,setRecherche]=useState("")
@@ -161,6 +161,9 @@ return (
 
            
      {pkmnNew}
+     <Link to={"/ring"}>
+       <button className={listFav.length==6 ? "validerVisible" : "validerInvisible"}>Valider</button>
+    </Link>
      </div>
     </div>
   );

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './Home'; // Ton ancienne logique
 import PokemonDetails from './PokemonDetails'; // Ta nouvelle page
-
+import Ring from './Ring'; // Vérifie bien le chemin vers le fichier
 function App() {
   const [pkmnList, setPkmnList] = useState([]);
 
@@ -21,6 +21,8 @@ function App() {
         
         {/* Page Détails : l'ID devient dynamique (:id) */}
         <Route path="/pokemon/:id" element={<PokemonDetails />} />
+        {/* <Route path="/Ring" element={<Ring/>} /> */}
+        <Route path='/Ring' element={<Ring/>} />
       </Routes>
     </Router>
   );
