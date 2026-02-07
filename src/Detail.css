@@ -320,6 +320,8 @@ pointer-events: auto;
     bottom: 50px;
     left: 50px;
     font-size: 1.5em;
+    display: flex;
+    flex-direction: column;
 }
 .tableType2{
     position: absolute;
@@ -327,41 +329,57 @@ pointer-events: auto;
     left: 270px;
     font-size: 1.5em;
 }
+.ligType{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
 .colNomType, .colNomStat{
     /* display: flex; */
     justify-content: right;
     text-align: center;
     /* align-items: center; */
 }
-.data{
+.titreType{
+    width: 150px;
+    margin: 0;
+    /* background-color: red; */
+}
+.data_type{
     font-size: 0.8em;
+    width: 50%;
+    text-align: center;
+    margin: 5px;
+    border-radius: 12px;
     /* background-color: red; */
     /* width: min-content; */
-    width: 25px;
+    /* width: 25px;
     height: 25px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    border-radius: 50%;
+    border-radius: 50%; */
     
 }
 .data0{
-    /* background-color: blue; */
-    color: green;
+    background-color: green;
+    color: rgb(2, 63, 2);
 }
 .data1{
-    color: orange;
-    /* background-color: orange; */
+    color: orangered;
+    background-color: orange;
 }
 .data2{
-    color: red;
-    /* background-color: red; */
+    color: rgb(100, 3, 3);
+    background-color: red;
 }
 
 .data4{
-    color: rgb(90, 2, 2);
-    background-color: rgba(255, 0, 0, 0.418);
+    color: black;
+    background-color: rgba(110, 3, 3, 0.986);
 }
 .badge-res {
   width: 30px;

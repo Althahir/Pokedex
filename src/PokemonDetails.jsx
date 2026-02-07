@@ -71,111 +71,119 @@ const officialArtwork = `https://raw.githubusercontent.com/PokeAPI/sprites/maste
           </tr>
         </table>
 
-        <table className="tableType">
-          <tr>
-            <td>{pkmnFound.resistances[0].name}</td>
-            <td className={`data data${pkmnFound.resistances[0].multiplier < 1 ? 0 : pkmnFound.resistances[0].multiplier}`}>
+        <div className="tableType">
+        <div className="ligType">
+            <p className="titreType">{pkmnFound.resistances[0].name}</p>
+            <p className={`data_type data${pkmnFound.resistances[0].multiplier < 1 ? 0 : pkmnFound.resistances[0].multiplier}`}>
               {pkmnFound.resistances[0].multiplier}
-            </td>
-          </tr>
-          <tr>
-            <td>{pkmnFound.resistances[1].name}</td>
-            <td className={`data data${pkmnFound.resistances[1].multiplier < 1 ? 0 : pkmnFound.resistances[1].multiplier}`}>
+            </p>
+          </div>
+        <div className="ligType">
+            <p className="titreType">{pkmnFound.resistances[1].name}</p>
+            <p className={`data_type data${pkmnFound.resistances[1].multiplier < 1 ? 0 : pkmnFound.resistances[1].multiplier}`}>
               {pkmnFound.resistances[1].multiplier}
-            </td>
-          </tr>
-          <tr>
-            <td>{pkmnFound.resistances[2].name}</td>
-            <td className={`data data${pkmnFound.resistances[2].multiplier < 1 ? 0 : pkmnFound.resistances[2].multiplier}`}>
+            </p>
+          </div>
+        <div className="ligType">
+            <p className="titreType">{pkmnFound.resistances[2].name}</p>
+            <p className={`data_type data${pkmnFound.resistances[2].multiplier < 1 ? 0 : pkmnFound.resistances[2].multiplier}`}>
               {pkmnFound.resistances[2].multiplier}
-            </td>
-          </tr>
-          <tr>
-            <td>{pkmnFound.resistances[3].name}</td>
-            <td className={`data data${pkmnFound.resistances[3].multiplier < 1 ? 0 : pkmnFound.resistances[3].multiplier}`}>
+            </p>
+          </div>
+        <div className="ligType">
+            <p className="titreType">{pkmnFound.resistances[3].name}</p>
+            <p className={`data_type data${pkmnFound.resistances[3].multiplier < 1 ? 0 : pkmnFound.resistances[3].multiplier}`}>
               {pkmnFound.resistances[3].multiplier}
-            </td>
-          </tr>
-          <tr>
-            <td>{pkmnFound.resistances[4].name}</td>
-            <td className={`data data${pkmnFound.resistances[4].multiplier < 1 ? 0 : pkmnFound.resistances[4].multiplier}`}>
+            </p>
+          </div>
+        <div className="ligType">
+            <p className="titreType">{pkmnFound.resistances[4].name}</p>
+            <p className={`data_type data${pkmnFound.resistances[4].multiplier < 1 ? 0 : pkmnFound.resistances[4].multiplier}`}>
               {pkmnFound.resistances[4].multiplier}
-            </td>
-          </tr>
-          <tr>
-            <td>{pkmnFound.resistances[5].name}</td>
-            <td className={`data data${pkmnFound.resistances[5].multiplier < 1 ? 0 : pkmnFound.resistances[5].multiplier}`}>
+            </p>
+          </div>
+        <div className="ligType">
+            <p className="titreType">{pkmnFound.resistances[5].name}</p>
+            <p className={`data_type data${pkmnFound.resistances[5].multiplier < 1 ? 0 : pkmnFound.resistances[5].multiplier}`}>
               {pkmnFound.resistances[5].multiplier}
-            </td>
-          </tr>
-          <tr>
-            <td>{pkmnFound.resistances[6].name}</td>
-            <td className={`data data${pkmnFound.resistances[6].multiplier < 1 ? 0 : pkmnFound.resistances[6].multiplier}`}>
+            </p>
+          </div>
+        <div className="ligType">
+            <p className="titreType">{pkmnFound.resistances[6].name}</p>
+            <p className={`data_type data${pkmnFound.resistances[6].multiplier < 1 ? 0 : pkmnFound.resistances[6].multiplier}`}>
               {pkmnFound.resistances[6].multiplier}
-            </td>
-          </tr>
-          <tr>
-            <td>{pkmnFound.resistances[7].name}</td>
-            <td className={`data data${pkmnFound.resistances[7].multiplier < 1 ? 0 : pkmnFound.resistances[7].multiplier}`}>
+            </p>
+          </div>
+        <div className="ligType">
+            <p className="titreType">{pkmnFound.resistances[7].name}</p>
+            <p className={`data_type data${pkmnFound.resistances[7].multiplier < 1 ? 0 : pkmnFound.resistances[7].multiplier}`}>
               {pkmnFound.resistances[7].multiplier}
-            </td>
-          </tr>
-          <tr>
-            <td>{pkmnFound.resistances[8].name}</td>
-            <td className={`data data${pkmnFound.resistances[8].multiplier < 1 ? 0 : pkmnFound.resistances[8].multiplier}`}>
+            </p>
+          </div>
+        <div className="ligType">
+            <p className="titreType">{pkmnFound.resistances[8].name}</p>
+            <p className={`data_type data${pkmnFound.resistances[8].multiplier < 1 ? 0 : pkmnFound.resistances[8].multiplier}`}>
               {pkmnFound.resistances[8].multiplier}
-            </td>
-          </tr>
+            </p>
+          </div>
           
-          </table>
-          <table className="tableType2">
-          <tr>
-            <td>{pkmnFound.resistances[9].name}</td>
-            <td className={`data data${pkmnFound.resistances[9].multiplier < 1 ? 0 : pkmnFound.resistances[9].multiplier}`}>
+          </div>
+          <div className="tableType2">
+        <div className="ligType">
+            <p className="titreType">{pkmnFound.resistances[9].name}</p>
+            <p className={`data_type data${pkmnFound.resistances[9].multiplier < 1 ? 0 : pkmnFound.resistances[9].multiplier}`}>
               {pkmnFound.resistances[9].multiplier}
-            </td>
-          </tr><tr>
-            <td>{pkmnFound.resistances[10].name}</td>
-            <td className={`data data${pkmnFound.resistances[10].multiplier < 1 ? 0 : pkmnFound.resistances[10].multiplier}`}>
+            </p>
+          </div>
+        <div className="ligType">
+            <p className="titreType">{pkmnFound.resistances[10].name}</p>
+            <p className={`data_type data${pkmnFound.resistances[10].multiplier < 1 ? 0 : pkmnFound.resistances[10].multiplier}`}>
               {pkmnFound.resistances[10].multiplier}
-            </td>
-          </tr><tr>
-            <td>{pkmnFound.resistances[11].name}</td>
-            <td className={`data data${pkmnFound.resistances[11].multiplier < 1 ? 0 : pkmnFound.resistances[11].multiplier}`}>
+            </p>
+          </div>
+        <div className="ligType">
+            <p className="titreType">{pkmnFound.resistances[11].name}</p>
+            <p className={`data_type data${pkmnFound.resistances[11].multiplier < 1 ? 0 : pkmnFound.resistances[11].multiplier}`}>
               {pkmnFound.resistances[11].multiplier}
-            </td>
-          </tr><tr>
-            <td>{pkmnFound.resistances[12].name}</td>
-            <td className={`data data${pkmnFound.resistances[12].multiplier < 1 ? 0 : pkmnFound.resistances[12].multiplier}`}>
+            </p>
+          </div>
+        <div className="ligType">
+            <p className="titreType">{pkmnFound.resistances[12].name}</p>
+            <p className={`data_type data${pkmnFound.resistances[12].multiplier < 1 ? 0 : pkmnFound.resistances[12].multiplier}`}>
               {pkmnFound.resistances[12].multiplier}
-            </td>
-          </tr><tr>
-            <td>{pkmnFound.resistances[13].name}</td>
-            <td className={`data data${pkmnFound.resistances[13].multiplier < 1 ? 0 : pkmnFound.resistances[13].multiplier}`}>
+            </p>
+          </div>
+        <div className="ligType">
+            <p className="titreType">{pkmnFound.resistances[13].name}</p>
+            <p className={`data_type data${pkmnFound.resistances[13].multiplier < 1 ? 0 : pkmnFound.resistances[13].multiplier}`}>
               {pkmnFound.resistances[13].multiplier}
-            </td>
-          </tr><tr>
-            <td>{pkmnFound.resistances[14].name}</td>
-            <td className={`data data${pkmnFound.resistances[14].multiplier < 1 ? 0 : pkmnFound.resistances[14].multiplier}`}>
+            </p>
+          </div>
+        <div className="ligType">
+            <p className="titreType">{pkmnFound.resistances[14].name}</p>
+            <p className={`data_type data${pkmnFound.resistances[14].multiplier < 1 ? 0 : pkmnFound.resistances[14].multiplier}`}>
               {pkmnFound.resistances[14].multiplier}
-            </td>
-          </tr><tr>
-            <td>{pkmnFound.resistances[15].name}</td>
-            <td className={`data data${pkmnFound.resistances[15].multiplier < 1 ? 0 : pkmnFound.resistances[15].multiplier}`}>
+            </p>
+          </div>
+        <div className="ligType">
+            <p className="titreType">{pkmnFound.resistances[15].name}</p>
+            <p className={`data_type data${pkmnFound.resistances[15].multiplier < 1 ? 0 : pkmnFound.resistances[15].multiplier}`}>
               {pkmnFound.resistances[15].multiplier}
-            </td>
-          </tr><tr>
-            <td>{pkmnFound.resistances[16].name}</td>
-            <td className={`data data${pkmnFound.resistances[16].multiplier < 1 ? 0 : pkmnFound.resistances[16].multiplier}`}>
+            </p>
+          </div>
+        <div className="ligType">
+            <p className="titreType">{pkmnFound.resistances[16].name}</p>
+            <p className={`data_type data${pkmnFound.resistances[16].multiplier < 1 ? 0 : pkmnFound.resistances[16].multiplier}`}>
               {pkmnFound.resistances[16].multiplier}
-            </td>
-          </tr><tr>
-            <td>{pkmnFound.resistances[17].name}</td>
-            <td className={`data data${pkmnFound.resistances[17].multiplier < 1 ? 0 : pkmnFound.resistances[17].multiplier}`}>
+            </p>
+          </div>
+        <div className="ligType">
+            <p className="titreType">{pkmnFound.resistances[17].name}</p>
+            <p className={`data_type data${pkmnFound.resistances[17].multiplier < 1 ? 0 : pkmnFound.resistances[17].multiplier}`}>
               {pkmnFound.resistances[17].multiplier}
-            </td>
-          </tr>
-        </table>
+            </p>
+          </div>
+          </div>
         <img src={officialArtwork} alt={pkmnFound.name.fr} className="pokemon-image" 
           /* Si l'image officielle n'existe pas, on peut mettre celle de TyraDex en secours */
           onError={(e) => { e.target.src = pkmnFound.sprites.regular }}/>
