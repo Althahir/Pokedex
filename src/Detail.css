@@ -71,6 +71,7 @@
     border: none;
     transition: all ease-in-out 0.2s;
     z-index: 5;
+    text-decoration: none;
 }
 .return:hover, .validerVisible:hover{
     background-color: grey;
@@ -471,18 +472,46 @@ background: linear-gradient(180deg, #f00000 44%, #222224 45%, #222224 55%, #f0f0
     background-color: #68686d56;
     border: 6px solid #22222456;
 }
+
 .imgRing{
     width: 200px;
     padding: 50px 0;
     background-color: rgba(0, 0, 0, 0.521);
-    margin: 0;
+    transform: translateY(-80%);
 }
 
 .nomRing{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     text-align: center;
-    font-size: 1.2em;
+    font-size: 2em;
     background-color: rgba(0,0,0,0.521);
     padding: 50px 0;
     margin: 0;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 3px;
+        border: 2px solid rgba(110, 109, 109, 0.486);
 
+
+}
+
+.cardRing{
+    width: 100%;
+    height: 100px;
+    -webkit-text-stroke: 2px black; /* Épaisseur et couleur */
+    color: white; /* Couleur du remplissage du texte */
+}
+
+.iconeRing{
+    position: absolute;
+    bottom: 50px;
+    border: 3px white solid;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 50px;
 }

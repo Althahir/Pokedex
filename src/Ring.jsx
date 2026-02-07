@@ -26,6 +26,24 @@ const Ring = () => {
                 .catch(err => console.error("Erreur API:", err));
         }
     }, []);
+    const typeIcons = {
+  Feu: require('./assets/Feu.png'),
+  Eau: require('./assets/Eau.png'),
+  Plante: require('./assets/Plante.png'),
+  Electrik: require('./assets/Electrik.png'),
+  Psy: require('./assets/Psy.png'),
+  Combat: require('./assets/Combat.png'),
+  Vol: require('./assets/Vol.png'),
+  Fée: require('./assets/Fée.png'),
+  Normal: require('./assets/Normal.png'),
+  Dragon: require('./assets/Dragon.png'),
+  Insecte: require('./assets/Insecte.png'),
+  Poison: require('./assets/Poison.png'),
+  Roche: require('./assets/Roche.png'),
+  Sol: require('./assets/Sol.png'),
+  Spectre: require('./assets/Spectre.png'),
+
+};
 
     return (
         <div className="ring">
@@ -36,13 +54,16 @@ const Ring = () => {
                 
                 {/* 3. C'est ici qu'on fait le .map() pour l'affichage */}
                 {listPkmn.map((pkmn) => (
-                    <div key={pkmn.pokedex_id}  className="card" >
+                    <div key={pkmn.pokedex_id}  className="cardRing" >
                         <img className="imgRing"
                             src={pkmn.sprites.regular} 
                             alt={pkmn.name.fr} 
                             // style={{ width: "100px" }}
                         />
-                        <p className="nomRing">{pkmn.name.fr}</p>
+                        <div className="nomRing" >
+                        <p className={`cardRing card${pkmn.types[0].name}`}>{pkmn.name.fr}</p>
+                        <img className="iconeRing" src={typeIcons[pkmn.types[0].name]}  />
+                        </div>
                     </div>
                 ))}
             </div>
