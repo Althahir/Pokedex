@@ -24,6 +24,7 @@ const typeIcons = {
   Spectre: require('./assets/Spectre.png'),
 
 };
+
   useEffect(()=>{
 
 //   fetch(`https://tyradex.app/api/v1/pokemon/6`)
@@ -36,6 +37,27 @@ const typeIcons = {
   }
 const officialArtwork = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pkmnFound.pokedex_id}.png`;
 
+// const DisplayStat=()=>{
+//   return(pkmnFound.stats.map((el,index)=>{
+//     return(
+//         <div className="ligType" key={index}>
+//             <p>HP</p>
+//             <p>{el.hp}</p>
+//           </div>
+//     )
+//   }))
+// }
+const DisplayType=()=>{
+  return (pkmnFound.resistances.map((el,index)=>{
+    return(
+    <div className="ligType" key={index}>
+            <p className="titreType">{el.name}</p>
+            <p className={`data_type data${el.multiplier < 1 ? 0 : el.multiplier}`}>
+              {el.multiplier}
+            </p>
+          </div>)}
+    )
+)}
 
       return(
       <div className="containerDetail ">
@@ -43,147 +65,108 @@ const officialArtwork = `https://raw.githubusercontent.com/PokeAPI/sprites/maste
         <h1 className={`nom nom${pkmnFound.types[0].name}`}>{pkmnFound.name?.fr}</h1>
         {/* <div className="containerImage"> */}
           <p className={`typeDetail type${pkmnFound.types[0].name}`}>Type : {pkmnFound.types[0].name} {pkmnFound.types[1] ? ` / ${pkmnFound.types[1].name}` : null}</p>
+         
           <table className="tableStat">
           <th>Stats :</th>
           <tr>
-            <td>HP</td>
-            <td>{pkmnFound.stats.hp}</td>
+             <td>HP</td>
+            <td className={`${pkmnFound.stats.hp<20 
+              ? "stat20" 
+              : pkmnFound.stats.hp<40
+                ?"stat40"
+                : pkmnFound.stats.hp<60
+                  ?"stat60"  
+                  :pkmnFound.stats.hp<80
+                    ?"stat80"
+                    : pkmnFound.stats.hp<100
+                      ?"stat100"
+                      :"statFull"}`
+              }>{pkmnFound.stats.hp}</td>
           </tr>
+         
           <tr>
             <td>Attaque</td>
-            <td>{pkmnFound.stats.atk}</td>
+            <td className={`${pkmnFound.stats.atk<20 
+              ? "stat20" 
+              : pkmnFound.stats.atk<40
+                ?"stat40"
+                : pkmnFound.stats.atk<60
+                  ?"stat60"  
+                  :pkmnFound.stats.atk<80
+                    ?"stat80"
+                    : pkmnFound.stats.atk<100
+                      ?"stat100"
+                      :"statFull"}`
+              }>{pkmnFound.stats.atk}</td>
           </tr>
           <tr>
             <td>Défense</td>
-            <td>{pkmnFound.stats.def}</td>
+            <td className={`${pkmnFound.stats.def<20 
+              ? "stat20" 
+              : pkmnFound.stats.def<40
+                ?"stat40"
+                : pkmnFound.stats.def<60
+                  ?"stat60"  
+                  :pkmnFound.stats.def<80
+                    ?"stat80"
+                    : pkmnFound.stats.def<100
+                      ?"stat100"
+                      :"statFull"}`
+              }>{pkmnFound.stats.def}</td>
           </tr>
           <tr>
             <td>Attaque Spéciale</td>
-            <td>{pkmnFound.stats.spe_atk}</td>
+            <td className={`${pkmnFound.stats.spe_atk<20 
+              ? "stat20" 
+              : pkmnFound.stats.spe_atk<40
+                ?"stat40"
+                : pkmnFound.stats.spe_atk<60
+                  ?"stat60"  
+                  :pkmnFound.stats.spe_atk<80
+                    ?"stat80"
+                    : pkmnFound.stats.spe_atk<100
+                      ?"stat100"
+                      :"statFull"}`
+              }>{pkmnFound.stats.spe_atk}</td>
           </tr>
           <tr>
             <td>Défense Spéciale</td>
-            <td>{pkmnFound.stats.spe_def}</td>
+            <td className={`${pkmnFound.stats.spe_def<20 
+              ? "stat20" 
+              : pkmnFound.stats.spe_def<40
+                ?"stat40"
+                : pkmnFound.stats.spe_def<60
+                  ?"stat60"  
+                  :pkmnFound.stats.spe_def<80
+                    ?"stat80"
+                    : pkmnFound.stats.spe_def<100
+                      ?"stat100"
+                      :"statFull"}`
+              }>{pkmnFound.stats.spe_def}</td>
           </tr>
           <tr>
             <td>Vitesse</td>
-            <td>{pkmnFound.stats.vit}</td>
+            <td className={`${pkmnFound.stats.vit<20 
+              ? "stat20" 
+              : pkmnFound.stats.vit<40
+                ?"stat40"
+                : pkmnFound.stats.vit<60
+                  ?"stat60"  
+                  :pkmnFound.stats.vit<80
+                    ?"stat80"
+                    : pkmnFound.stats.vit<100
+                      ?"stat100"
+                      :"statFull"}`
+              }>{pkmnFound.stats.vit}</td>
           </tr>
         </table>
-
+        {/* {DisplayStat()} */}
+        <h5 className="titleType">Forces / Faiblesses :</h5>
         <div className="tableType">
-        <div className="ligType">
-            <p className="titreType">{pkmnFound.resistances[0].name}</p>
-            <p className={`data_type data${pkmnFound.resistances[0].multiplier < 1 ? 0 : pkmnFound.resistances[0].multiplier}`}>
-              {pkmnFound.resistances[0].multiplier}
-            </p>
-          </div>
-        <div className="ligType">
-            <p className="titreType">{pkmnFound.resistances[1].name}</p>
-            <p className={`data_type data${pkmnFound.resistances[1].multiplier < 1 ? 0 : pkmnFound.resistances[1].multiplier}`}>
-              {pkmnFound.resistances[1].multiplier}
-            </p>
-          </div>
-        <div className="ligType">
-            <p className="titreType">{pkmnFound.resistances[2].name}</p>
-            <p className={`data_type data${pkmnFound.resistances[2].multiplier < 1 ? 0 : pkmnFound.resistances[2].multiplier}`}>
-              {pkmnFound.resistances[2].multiplier}
-            </p>
-          </div>
-        <div className="ligType">
-            <p className="titreType">{pkmnFound.resistances[3].name}</p>
-            <p className={`data_type data${pkmnFound.resistances[3].multiplier < 1 ? 0 : pkmnFound.resistances[3].multiplier}`}>
-              {pkmnFound.resistances[3].multiplier}
-            </p>
-          </div>
-        <div className="ligType">
-            <p className="titreType">{pkmnFound.resistances[4].name}</p>
-            <p className={`data_type data${pkmnFound.resistances[4].multiplier < 1 ? 0 : pkmnFound.resistances[4].multiplier}`}>
-              {pkmnFound.resistances[4].multiplier}
-            </p>
-          </div>
-        <div className="ligType">
-            <p className="titreType">{pkmnFound.resistances[5].name}</p>
-            <p className={`data_type data${pkmnFound.resistances[5].multiplier < 1 ? 0 : pkmnFound.resistances[5].multiplier}`}>
-              {pkmnFound.resistances[5].multiplier}
-            </p>
-          </div>
-        <div className="ligType">
-            <p className="titreType">{pkmnFound.resistances[6].name}</p>
-            <p className={`data_type data${pkmnFound.resistances[6].multiplier < 1 ? 0 : pkmnFound.resistances[6].multiplier}`}>
-              {pkmnFound.resistances[6].multiplier}
-            </p>
-          </div>
-        <div className="ligType">
-            <p className="titreType">{pkmnFound.resistances[7].name}</p>
-            <p className={`data_type data${pkmnFound.resistances[7].multiplier < 1 ? 0 : pkmnFound.resistances[7].multiplier}`}>
-              {pkmnFound.resistances[7].multiplier}
-            </p>
-          </div>
-        <div className="ligType">
-            <p className="titreType">{pkmnFound.resistances[8].name}</p>
-            <p className={`data_type data${pkmnFound.resistances[8].multiplier < 1 ? 0 : pkmnFound.resistances[8].multiplier}`}>
-              {pkmnFound.resistances[8].multiplier}
-            </p>
-          </div>
           
-          </div>
-          <div className="tableType2">
-        <div className="ligType">
-            <p className="titreType">{pkmnFound.resistances[9].name}</p>
-            <p className={`data_type data${pkmnFound.resistances[9].multiplier < 1 ? 0 : pkmnFound.resistances[9].multiplier}`}>
-              {pkmnFound.resistances[9].multiplier}
-            </p>
-          </div>
-        <div className="ligType">
-            <p className="titreType">{pkmnFound.resistances[10].name}</p>
-            <p className={`data_type data${pkmnFound.resistances[10].multiplier < 1 ? 0 : pkmnFound.resistances[10].multiplier}`}>
-              {pkmnFound.resistances[10].multiplier}
-            </p>
-          </div>
-        <div className="ligType">
-            <p className="titreType">{pkmnFound.resistances[11].name}</p>
-            <p className={`data_type data${pkmnFound.resistances[11].multiplier < 1 ? 0 : pkmnFound.resistances[11].multiplier}`}>
-              {pkmnFound.resistances[11].multiplier}
-            </p>
-          </div>
-        <div className="ligType">
-            <p className="titreType">{pkmnFound.resistances[12].name}</p>
-            <p className={`data_type data${pkmnFound.resistances[12].multiplier < 1 ? 0 : pkmnFound.resistances[12].multiplier}`}>
-              {pkmnFound.resistances[12].multiplier}
-            </p>
-          </div>
-        <div className="ligType">
-            <p className="titreType">{pkmnFound.resistances[13].name}</p>
-            <p className={`data_type data${pkmnFound.resistances[13].multiplier < 1 ? 0 : pkmnFound.resistances[13].multiplier}`}>
-              {pkmnFound.resistances[13].multiplier}
-            </p>
-          </div>
-        <div className="ligType">
-            <p className="titreType">{pkmnFound.resistances[14].name}</p>
-            <p className={`data_type data${pkmnFound.resistances[14].multiplier < 1 ? 0 : pkmnFound.resistances[14].multiplier}`}>
-              {pkmnFound.resistances[14].multiplier}
-            </p>
-          </div>
-        <div className="ligType">
-            <p className="titreType">{pkmnFound.resistances[15].name}</p>
-            <p className={`data_type data${pkmnFound.resistances[15].multiplier < 1 ? 0 : pkmnFound.resistances[15].multiplier}`}>
-              {pkmnFound.resistances[15].multiplier}
-            </p>
-          </div>
-        <div className="ligType">
-            <p className="titreType">{pkmnFound.resistances[16].name}</p>
-            <p className={`data_type data${pkmnFound.resistances[16].multiplier < 1 ? 0 : pkmnFound.resistances[16].multiplier}`}>
-              {pkmnFound.resistances[16].multiplier}
-            </p>
-          </div>
-        <div className="ligType">
-            <p className="titreType">{pkmnFound.resistances[17].name}</p>
-            <p className={`data_type data${pkmnFound.resistances[17].multiplier < 1 ? 0 : pkmnFound.resistances[17].multiplier}`}>
-              {pkmnFound.resistances[17].multiplier}
-            </p>
-          </div>
-          </div>
+          {DisplayType()}
+        </div>
+        
         <img src={officialArtwork} alt={pkmnFound.name.fr} className="pokemon-image" 
           /* Si l'image officielle n'existe pas, on peut mettre celle de TyraDex en secours */
           onError={(e) => { e.target.src = pkmnFound.sprites.regular }}/>
