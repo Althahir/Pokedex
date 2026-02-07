@@ -56,16 +56,17 @@
 }
 .return{
     position: absolute;
-    top: 30px;
-    left: 30px;
-    width: 100px;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
     text-align: center;
     height: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.3em;
-    color: black;
+    color: gray;
     background-color: rgba(128, 128, 128, 0.377);
     border-radius: 8px;
     border: none;
@@ -73,9 +74,10 @@
     z-index: 5;
     text-decoration: none;
 }
-.return:hover, .validerVisible:hover{
+.return:hover{
     background-color: grey;
-    transform: scale(1.1);
+    color: rgb(58, 58, 58);
+    transform: scale(1.1), translateX(-50%);
 }
 .validerInvisible{
 pointer-events: none;
@@ -114,7 +116,10 @@ pointer-events: auto;
         transition: all ease-in-out 0.2s;
 
 }
-
+.validerVisible:hover{
+    background-color: grey;
+    transform: scale(1.1);
+}
 .pokemon-image{
     position: absolute;
     top: 40%;
@@ -311,7 +316,7 @@ pointer-events: auto;
 .tableStat{
     position: absolute;
     top: 100px;
-    left: 50px;
+    left: 3%;
     font-size: 2em;
     width: 350px;
 }
@@ -389,15 +394,16 @@ pointer-events: auto;
   border-radius: 8px;
   width: 200px;
   position: absolute;
-  bottom: 0;
+  bottom: 20px;
 }
 .titleType{
-    width: 150px;
+    width: 200px;
     font-size: 2em;
-    margin: 0;
+    /* margin: 0; */
     text-align: center;
     position: absolute;
-    bottom: 350px;
+    bottom: 360px;
+    left: 3%;
     width: 420px;
     /* background-color: red; */
     margin-bottom: 20px;
@@ -415,29 +421,11 @@ pointer-events: auto;
 }
 
 .titreType{
-    width: 150px;
+    width: 200px;
     font-size: 2em;
     margin: 0;
     text-align: right;
     /* background-color: red; */
-}
-.data_type{
-    font-size: 1.3em;
-    width: 30%;
-    height: 70%;
-    margin: 5px;
-    border-radius: 12px;
-    text-align: center;
-    /* background-color: red; */
-    /* width: min-content; */
-    /* width: 25px;
-    height: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    border-radius: 50%; */
-    
 }
 .data_type {
      font-size: 1.3em;
@@ -454,8 +442,8 @@ pointer-events: auto;
 }
 
 .data0 { background-color: green; color: white; }
-.data1 { background-color: white; color: black; border: 1px solid #ccc; }
-.data2 { background-color: orange; color: white; }
+.data1 { background-color: yellow; color: black; border: 1px solid #ccc; }
+.data2 { background-color: orangered; color: white; }
 
 .data4 { 
     /* background-color: red; 
