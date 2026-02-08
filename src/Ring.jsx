@@ -3,10 +3,17 @@ import { Link } from "react-router-dom";
 import "./Detail.css";
 import "./App.css";
 import logo from "./logo.png"
+ import badges from './badges.json'
+ import vs from './assets/vs.png'
+ import pierre from './assets/Pierre.webp'
+//  import racaillou from 'https://raw.githubusercontent.com/Yarkis01/TyraDex/images/sprites/74/regular.png'
+
+
 
 const Ring = () => {
     const API = "https://tyradex.app/api/v1/pokemon/";
     const [listPkmn, setListPkmn] = useState([]);
+    
 
     useEffect(() => {
         const list = localStorage.getItem("PkmnFav");
@@ -64,6 +71,7 @@ const Ring = () => {
                         <p className={`cardRing card${pkmn.types[0].name}`}>{pkmn.name.fr}</p>
                         <img className="iconeRing" src={typeIcons[pkmn.types[0].name]}  />
                         </div>
+                        <img className="vsImg" src={vs}></img>
                     </div>
                 ))}
             </div>
@@ -74,7 +82,13 @@ const Ring = () => {
             </div>
             
             <div className="ringAreaRight">
-                <h1>En attente du joueur 2</h1>
+                <h1>{badges[0].name}<img className="badgeImg" src={badges[0].image}></img></h1>
+                
+                <h2>{badges[0].leader}
+                    <img className="pierreImg" src={pierre}></img>
+                    <p>{badges[0].city}</p>
+                </h2>
+                {/* <img src={racaillou}></img> */}
                 {/* Zone pour les autres Pokémon */}
             </div>
         </div>
