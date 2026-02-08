@@ -13,13 +13,17 @@
     "id": 2,
     "name": "Badge Cascade",
     "leader": "Ondine",
+    "image-leader":"/ondine.png",
     "city": "Azuria",
-    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/badges/2.png"
+    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/badges/2.png",
+    "pk1":"https://raw.githubusercontent.com/Yarkis01/TyraDex/images/sprites/74/regular.png",
+    "pk2":"https://raw.githubusercontent.com/Yarkis01/TyraDex/images/sprites/95/regular.png"
   },
   {
     "id": 3,
     "name": "Badge Foudre",
     "leader": "Major Bob",
+    "image-leader":"/bob.png",
     "city": "Carmin sur Mer",
     "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/badges/3.png"
   },
@@ -27,6 +31,7 @@
     "id": 4,
     "name": "Badge Prisme",
     "leader": "Erika",
+    "image-leader":"/erika.png",
     "city": "Céladopole",
     "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/badges/4.png"
   },
@@ -34,6 +39,7 @@
     "id": 5,
     "name": "Badge Âme",
     "leader": "Koga",
+    "image-leader":"/koga.png",
     "city": "Parmanie",
     "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/badges/5.png"
   },
@@ -41,6 +47,7 @@
     "id": 6,
     "name": "Badge Marais",
     "leader": "Morgane",
+    "image-leader":"/morgane.png",
     "city": "Safrania",
     "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/badges/6.png"
   },
@@ -48,6 +55,7 @@
     "id": 7,
     "name": "Badge Volcan",
     "leader": "Auguste",
+    "image-leader":"/auguste.png",
     "city": "Cramois'Île",
     "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/badges/7.png"
   },
@@ -55,6 +63,7 @@
     "id": 8,
     "name": "Badge Terre",
     "leader": "Giovanni",
+    "image-leader":"/giovanni.png",
     "city": "Jadielle",
     "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/badges/8.png"
   }

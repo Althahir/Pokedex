@@ -29,7 +29,8 @@ body {
   
   transition: all ease-in-out 0.4s ;
 }
-.btnParours{
+.btnParcours{
+  z-index: 500;
   position: fixed;
   right: 50px;
   top: 50px;
@@ -99,7 +100,7 @@ body {
     transition: all ease-in-out 0.2s;
 
 }
-.deleteSearch:hover, .btnParours:hover{
+.deleteSearch:hover, .btnParcours:hover{
     background-color: grey;
     transform: scale(1.1);
 }
@@ -488,7 +489,7 @@ background: linear-gradient(180deg, #f00000 48%, #222224 49%, #222224 50%, #f0f0
   /* z-index: -1; */
 }
 .atk{
-  bottom: -140px;
+  bottom: -160px;
   left: -90px;
   width: 200px;
   display: flex;
@@ -499,7 +500,7 @@ background: linear-gradient(180deg, #f00000 48%, #222224 49%, #222224 50%, #f0f0
 .def{
   left:75px;
   text-align: left;
-  bottom: -140px;
+  bottom: -160px;
   display: flex;
   justify-content: left;
   align-items: center;

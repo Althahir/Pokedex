@@ -12,18 +12,64 @@
         })
     }  */
 
-    
-    .parcoursArea{
-        width: 100vw;
+    *{
+        margin: 0;
+        padding: 0;
+
+    }
+    /* body{
         height: 100vh;
-        overflow: hidden;
-        /* background-color: red; */
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 5px;
-        padding: 50px;
+        width: 100vw;
+        padding: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: blue;
+    } */
+.parcoursArea {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: grid;
+    
+    /* 1. On définit nos 4 colonnes */
+    grid-template-columns: repeat(4, 1fr);
+    
+    /* 2. Centre la grille horizontalement et verticalement dans le 100vh */
+    justify-content: center; /* Centre les colonnes si elles ont une largeur fixe */
+    align-content: center;   /* Centre les lignes verticalement */
+
+    /* 3. Centre chaque élément (badgeWrapper) à l'intérieur de sa propre case */
+    justify-items: center;   /* Centre horizontalement dans la cellule */
+    align-items: center;     /* Centre verticalement dans la cellule */
+
+    gap: 5px; /* Un peu d'espace entre les badges pour que ce soit plus propre */
+
     }
     .advCard{
         width: 250px;
-        background-color: red;
+        height: 450px;
+        /* background-color: red; */
+        border: 2px solid grey;
+        border-radius: 20px;
+        margin: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        /* img{
+        width: 250px;
+        border: 2px solid black;
+        } */
+         h1{
+            margin-bottom: 20px;
+         }
+    }
+    .typeParcours{
+        margin: 20px;
+    }
+    .imgLeader{
+        width: 240px;
+        /* height: 10px; */
+        margin: 10px;
     }
