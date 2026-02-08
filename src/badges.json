@@ -3,8 +3,11 @@
     "id": 1,
     "name": "Badge Roche",
     "leader": "Pierre",
+    "image-leader":"/pierre2.png",
     "city": "Argenta",
-    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/badges/1.png"
+    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/badges/1.png",
+    "pk1":"https://raw.githubusercontent.com/Yarkis01/TyraDex/images/sprites/74/regular.png",
+    "pk2":"https://raw.githubusercontent.com/Yarkis01/TyraDex/images/sprites/95/regular.png"
   },
   {
     "id": 2,

@@ -1,0 +1,29 @@
+/* 
+    return(
+         <div className="paroursArea">
+        {infoParcours.map((el)=>{
+            return(
+                <div className="advCard">
+                    <h1 key={el.id}>{el.name}</h1>
+                    <img src={el.image} alt="" ></img>
+                </div>
+            )
+            
+        })
+    }  */
+
+    
+    .parcoursArea{
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        /* background-color: red; */
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 5px;
+        padding: 50px;
+    }
+    .advCard{
+        width: 250px;
+        background-color: red;
+    }

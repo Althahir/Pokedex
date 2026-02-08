@@ -29,7 +29,23 @@ body {
   
   transition: all ease-in-out 0.4s ;
 }
-
+.btnParours{
+  position: fixed;
+  right: 50px;
+  top: 50px;
+   width: 8%;
+    text-align: center;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    color: black;
+    background-color: rgba(128, 128, 128, 0.596);
+    border-radius: 8px;
+    margin-left: 50px;
+    transition: all ease-in-out 0.2s;
+}
 .logo:hover {
   transform: scale(1.1) rotate(5deg);
   filter: drop-shadow(0 0 15px rgba(255, 203, 15, 2));
@@ -83,7 +99,7 @@ body {
     transition: all ease-in-out 0.2s;
 
 }
-.deleteSearch:hover{
+.deleteSearch:hover, .btnParours:hover{
     background-color: grey;
     transform: scale(1.1);
 }

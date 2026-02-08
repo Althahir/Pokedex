@@ -6,6 +6,7 @@ import logo from "./logo.png"
  import badges from './badges.json'
  import vs from './assets/vs.png'
  import pierre from './assets/Pierre.webp'
+ import roche from './assets/Roche.png'
 //  import racaillou from 'https://raw.githubusercontent.com/Yarkis01/TyraDex/images/sprites/74/regular.png'
 
 
@@ -86,8 +87,21 @@ const Ring = () => {
                 
                 <h2>{badges[0].leader}
                     <img className="pierreImg" src={pierre}></img>
-                    <p>{badges[0].city}</p>
+                    <p>Aréne : {badges[0].city}</p>
                 </h2>
+                <div className="pkmnAdversaireArea">
+                    <div className="pkmnArea">
+                        <img src={badges[0].pk1} className="pkmnAdversaire"></img>
+                        <div className="racaillouOnix">Racaillou</div>
+                        <img className="typeAdversaire" id="typ1" src={roche} alt="" />
+                    </div>
+                    <div className="pkmnArea">
+                        <img src={badges[0].pk2} className="pkmnAdversaire"></img>
+                        <div className="racaillouOnix">Onix</div>
+                        <img className="typeAdversaire"  id="typ2" src={roche} alt="" />
+                    </div>
+                
+                </div>
                 {/* <img src={racaillou}></img> */}
                 {/* Zone pour les autres Pokémon */}
             </div>

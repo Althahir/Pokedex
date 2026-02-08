@@ -122,6 +122,9 @@ const afficherFav = () => {
 return (
     <div className="App">
       <img className="logo" src={logo}></img>
+      <Link to={"/Parcours"}>
+       <button className="btnParours">Parcours</button>
+    </Link>
       {/* <p className= "messageShow" >{message}</p> */}
       {/* <p className={message.includes("Equipe") ? "messageShow" : "messageHide"} >{message}</p> */}
       {/* <p className='message'>{message}</p> */}

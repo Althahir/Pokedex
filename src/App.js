@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './Home'; // Ton ancienne logique
 import PokemonDetails from './PokemonDetails'; // Ta nouvelle page
 import Ring from './Ring'; // Vérifie bien le chemin vers le fichier
+import Parcours from './Parcours';
 function App() {
   const [pkmnList, setPkmnList] = useState([]);
 
@@ -23,6 +24,7 @@ function App() {
         <Route path="/pokemon/:id" element={<PokemonDetails />} />
         {/* <Route path="/Ring" element={<Ring/>} /> */}
         <Route path='/Ring' element={<Ring/>} />
+        <Route path='/Parcours' element={<Parcours/>} />
       </Routes>
     </Router>
   );
