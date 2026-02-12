@@ -1,6 +1,6 @@
 
 import './App.css';
-import pkmnList from "./pokedex.json"
+import pkmnList from "./data/pokedex.json"
 import PokemonList from './PokemonList';
 import logo from  './assets/logo.png'
 import { useEffect, useState } from 'react';
@@ -83,7 +83,6 @@ const afficherFav = () => {
 
   for (let i = 0; i < 6; i++) {
     if (listFav[i]) {
-      // S'il y a un favori à cet index, on cherche ses infos
       const pk = pkmnList.find(p => p.id === listFav[i]);
       equipeVide.push(
         <PokemonList
@@ -109,9 +108,7 @@ const afficherFav = () => {
 
   return equipeVide;
 };
- const defavPkmn=(i)=>{
-  return i
- }
+
 
 return (
     <div className="App">

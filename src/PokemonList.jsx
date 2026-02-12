@@ -16,7 +16,7 @@ const typeIcons = {
   Roche: require('./assets/Roche.png'),
   Sol: require('./assets/Sol.png'),
   Spectre: require('./assets/Spectre.png'),
-  // ... ajoute tous tes types
+
 };
 
 const PokemonList =({id,nom,type,image,icone,statsAtk,statsDef, isFav, onFavClick, nbfav,showPkball, supprFav})=>{
